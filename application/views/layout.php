@@ -7,8 +7,8 @@
     <meta name="author" content="">
     <title><?php echo $title; ?> &mdash; Akure Solusi</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/app.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -65,7 +65,7 @@
 <aside class="main-sidebar fixed offcanvas shadow">
     <section class="sidebar">
         <div class="w-150px mt-3 mb-3 ml-3">
-            <img src="<?php echo base_url(); ?>assets/img/basic/logo-akure.png" alt="">
+            <img src="<?php echo base_url('assets/img/basic/logo-akure.png'); ?>" alt="">
         </div>
         <div class="relative">
             <a data-toggle="collapse" href="#userSettingsCollapse" role="button" aria-expanded="false"
@@ -75,7 +75,7 @@
             <div class="user-panel p-3 light mb-2">
                 <div>
                     <div class="float-left image">
-                        <img class="user_avatar" src="<?php echo base_url(); ?>assets/img/users.png" alt="User Image">
+                        <img class="user_avatar" src="<?php echo base_url('assets/img/users.png'); ?>" alt="User Image">
                     </div>
                     <div class="float-left info">
                         <h6 class="font-weight-light mt-2 mb-1">Firman</h6>
@@ -98,17 +98,17 @@
         </div>
         <ul class="sidebar-menu">
             <li class="header"><strong>MAIN NAVIGATION</strong></li>
-            <li ><a href="<?php echo base_url(); ?>dashboard"><i class="icon icon-dashboard2 blue-text s-18"></i><span>Dashboard</span></a></li>
+            <li ><a href="<?php echo base_url('dashboard'); ?>"><i class="icon icon-dashboard2 blue-text s-18"></i><span>Dashboard</span></a></li>
             <li ><a href="#"><i class="icon icon-package indigo-text s-18"></i>Inventory<i
                     class="icon icon-angle-left s-18 pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url(); ?>barang"><i class="icon icon-circle-o"></i>Item Library</a>
+                    <li><a href="<?php echo base_url('barang'); ?>"><i class="icon icon-circle-o"></i>Item Library</a>
                     </li>
                     <li><a href="<?php echo base_url(); ?>"><i class="icon icon-circle-o"></i>Categories</a>
                     </li>
                 </ul>
             </li>
-            <li><a href="<?php echo base_url(); ?>pos"><i class="icon icon-desktop_windows green-text s-18"></i><span>Point Of Sale</span></a></li>
+            <li><a href="<?php echo base_url('pos'); ?>"><i class="icon icon-desktop_windows green-text s-18"></i><span>Point Of Sale</span></a></li>
             <!-- <li class="header light mt-3"><strong>UI COMPONENTS</strong></li> -->
         </ul>
     </section>
@@ -140,7 +140,7 @@
         <!-- User Account-->
         <li class="dropdown custom-dropdown user user-menu">
             <a href="#" class="nav-link" data-toggle="dropdown">
-                <img src="assets/img/users.png" class="user-image" alt="User Image">
+                <img src="<?php echo base_url('assets/img/users.png'); ?>" class="user-image" alt="User Image">
                 <i class="icon-more_vert "></i>
             </a>
             <div class="dropdown-menu p-10">
@@ -188,6 +188,6 @@
 <div class="control-sidebar-bg shadow white fixed"></div>
 </div>
 <!--/#app -->
-<script src="assets/js/app.js"></script>
+<script src="<?php echo base_url('assets/js/app.js'); ?>"></script>
 </body>
 </html>

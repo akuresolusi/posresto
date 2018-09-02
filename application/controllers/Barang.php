@@ -13,7 +13,6 @@ class Barang extends CI_Controller {
 		$data['content'] = "barang/input-barang";
 		$data['title'] = 'Add Item Library';
 		$this->load->view('layout',$data);
-		// echo "ayam";
 	}
 	
 }
