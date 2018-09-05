@@ -102,9 +102,9 @@
             <li ><a href="#"><i class="icon icon-package indigo-text s-18"></i>Inventory<i
                     class="icon icon-angle-left s-18 pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url('barang'); ?>"><i class="icon icon-circle-o"></i>Item Library</a>
+                    <li><a href="<?php echo base_url('item'); ?>"><i class="icon icon-circle-o"></i>Item Library</a>
                     </li>
-                    <li><a href="<?php echo base_url(); ?>"><i class="icon icon-circle-o"></i>Categories</a>
+                    <li><a href="<?php echo base_url('categories'); ?>"><i class="icon icon-circle-o"></i>Categories</a>
                     </li>
                 </ul>
             </li>

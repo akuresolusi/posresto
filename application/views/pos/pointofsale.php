@@ -21,18 +21,7 @@
 
     <!-- LIST MENU -->
     <div class="col-md-8">
-        <form class="search" action="#">
-          <div class="input-group stylish-input-group">
-            <input type="text" class="form-control" id="custom-search"  placeholder="Search" >
-              <span class="input-group-addon">
-                <button type="submit">
-                    <span class="icon-search2" title="Search"></span>
-                </button>  
-              </span>
-            </div>
-        </form>
-
-        <div class="card my-3">
+        <div class="card">
             <div class="card-body p-3">
                 <h5 class="mb-2 ml-1">CATEGORY</h5>
                     <div class="lightSlider service-blocks" data-item="7" data-item-md="6"
@@ -190,7 +179,7 @@
             </div>
             <div class="card-body p-0 bg-white">
                 <div class="table-responsive slimScroll" data-height="340">
-                    <table class="table table-hover">
+                    <table class="table table-hover table-striped">
                         <!-- Table heading -->
                         <tbody>
                         <tr>

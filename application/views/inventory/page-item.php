@@ -7,7 +7,7 @@
                 </h4>
             </div>
             <div class="col-6">
-                <a href="<?php echo base_url(); ?>barang/add" class="btn btn-sm float-right btn-primary"><span class="icon-add"></span> Add Data</a>
+                <a href="<?php echo base_url(); ?>item/add" class="btn btn-sm float-right btn-primary"><span class="icon-add"></span> Add Data</a>
             </div>
         </div>
     </div>

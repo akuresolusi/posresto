@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/font-awesome/css/all.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/numpad/jquery.numpad.css">
-    <meta name="theme-color" content="#fff">
+    <meta name="theme-color" content="#64b5f6">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
 </head>
@@ -117,7 +117,18 @@
 </aside>
 <!--Sidebar End-->
 </div>
-
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
+            <div class="search-bar">
+                <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
+                       placeholder="Search">
+            </div>
+            <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
+               aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
+        </div>
+    </div>
+</div>
 <div class="page">
     <header class="blue lighten-2 relative shadow ">
         <div class="navbar navbar-expand navbar-dark d-flex justify-content-between bd-navbar">
@@ -127,8 +138,15 @@
                 </a>
             </div>
             <!--Top Menu Start -->
-<div class="navbar-custom-menu p-t-5">
+<div class="navbar-custom-menu p-t-5" style="font-size: 23px">
     <ul class="nav navbar-nav">
+        <li>
+            <a class="nav-link " data-toggle="collapse" data-target="#navbarToggleExternalContent"
+               aria-controls="navbarToggleExternalContent"
+               aria-expanded="false" aria-label="Toggle navigation">
+                <i class=" icon-search3 "></i>
+            </a>
+        </li>
         <!-- User Account-->
         <li class="dropdown custom-dropdown user user-menu">
             <a href="#" class="nav-link" data-toggle="dropdown">
