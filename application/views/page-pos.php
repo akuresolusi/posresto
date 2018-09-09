@@ -117,18 +117,6 @@
 </aside>
 <!--Sidebar End-->
 </div>
-<div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
-            <div class="search-bar">
-                <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
-                       placeholder="Search">
-            </div>
-            <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
-               aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
-        </div>
-    </div>
-</div>
 <div class="page">
     <header class="blue lighten-2 relative shadow ">
         <div class="navbar navbar-expand navbar-dark d-flex justify-content-between bd-navbar">
@@ -138,20 +126,12 @@
                 </a>
             </div>
             <!--Top Menu Start -->
-<div class="navbar-custom-menu p-t-5" style="font-size: 23px">
+<div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
-        <li>
-            <a class="nav-link " data-toggle="collapse" data-target="#navbarToggleExternalContent"
-               aria-controls="navbarToggleExternalContent"
-               aria-expanded="false" aria-label="Toggle navigation">
-                <i class=" icon-search3 "></i>
-            </a>
-        </li>
         <!-- User Account-->
-        <li class="dropdown custom-dropdown user user-menu">
+        <li class="dropdown custom-dropdown user user-menu pr-0">
             <a href="#" class="nav-link" data-toggle="dropdown">
-                <img src="<?php echo base_url(); ?>assets/img/users.png" class="user-image" alt="User Image">
-                <i class="icon-more_vert "></i>
+                <img src="<?php echo base_url(); ?>assets/img/users.png" class="user-image mr-0" alt="User Image">
             </a>
             <div class="dropdown-menu p-4">
                 <div class="row box justify-content-between my-4">

@@ -7,7 +7,7 @@
                 </h4>
             </div>
             <div class="col-6">
-                <button class="btn btn-sm float-right btn-primary" onclick="add_category()"><span class="icon-add"></span> Add Data</button>
+                <button class="btn btn-sm float-right btn-primary" onclick="add_discount()"><span class="icon-add"></span> Add Data</button>
             </div>
         </div>
     </div>
@@ -17,32 +17,25 @@
         <div class="card">
             <div class="card-body b-b">
                 <table class="table table-hover table-bordered table-striped data-tables"
-                       data-options='{ "paging": true; "searching":true}' id="table_id">
+                       data-options='{ "paging": true; "searching":true}'">
                     <thead>
                     <tr>
                         <th width="10">No</th>
-                        <th>Category Name</th>
+                        <th>Discount Names</th>
+                        <th>Amount</th>
                         <th width="40"></th>
                     </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($categories as $categorie){?>
-                        <tr>
-                            <td><?php echo $categorie->id;?></td>
-                            <td><?php echo $categorie->categories_name;?></td>
-                            <td>
-                                <button class="btn btn-warning btn-xs" onclick="edit_category(<?php echo $categorie->id;?>)"><i class="icon-edit"></i></button>
-                                <button class="btn btn-danger btn-xs" onclick="delete_category(<?php echo $categorie->id;?>)"><i class="icon-trash"></i></button>
-                            </td>
-                        </tr>
-                        <?php }?>
+                        
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
- <script type="text/javascript">
+
+<script type="text/javascript">
   $(document).ready( function () {
       $('#table_id').DataTable();
   } );
@@ -50,7 +43,7 @@
     var table;
  
  
-    function add_category()
+    function add_discount()
     {
       save_method = 'add';
       $('#form')[0].reset(); // reset form on modals
@@ -58,7 +51,7 @@
     //$('.modal-title').text('Add Person'); // Set Title to Bootstrap modal title
     }
  
-    function edit_category(id)
+    function edit_discount(id)
     {
       save_method = 'update';
       $('#form')[0].reset(); // reset form on modals
@@ -87,7 +80,7 @@
  
  
  
-    function save_category()
+    function save_discount()
     {
       var url;
       if(save_method == 'add')
@@ -119,7 +112,7 @@
         });
     }
  
-    function delete_category(id)
+    function delete_discount(id)
     {
         // ajax delete data from database
           $.ajax({
@@ -140,8 +133,6 @@
     }
 
   </script>
- 
-
 
 <!-- The Modal -->
 <div class="modal fade" id="modal_form" role="dialog">
@@ -158,18 +149,32 @@
                 <form action="#" id="form" onkeypress="return event.keyCode != 13;">
                     <input type="hidden" value="" name="id"/>
                   <div class="form-group">
-                      <label>Category Name</label>
+                      <label>Discount Name</label>
                       <input type="text" name="categories_name" class="form-control" required="">
-                        <div class="invalid-feedback">
-                          Please choose categories name.
-                        </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Amount</label>
+                      <input type="text" name="categories_name" class="form-control" required="">
+                  </div>
+                  <div class="form-group mb-0">
+                    <label>Options</label>
+                  </div>
+                  <div class="form-group mb-0">
+                      <div class="toggle-button toggle-button--aava">
+                          <input id="toggleButton" type="checkbox">
+                          <label for="toggleButton" data-on-text="On" data-off-text="%&nbsp;"></label>
+                      </div>
+                      <div class="toggle-button toggle-button--aava">
+                          <input id="toggleButton2" type="checkbox">
+                          <label for="toggleButton2" data-on-text="On" data-off-text="Rp"></label>
+                      </div>
                   </div>
                 </form>
             </div>
             
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="submit" id="btnSave" onclick="save_category()" class="btn btn-sm btn-success"><span class="icon-save"></span> Save</button>
+                <button type="submit" id="btnSave" onclick="save_discount()" class="btn btn-sm btn-success"><span class="icon-save"></span> Save</button>
                 <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><span class="icon-remove"></span> Close</button>
             </div>
         </div>

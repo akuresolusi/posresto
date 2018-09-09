@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <div class="form-line">
                                 <label>Categories</label>
-                                <select class="form-control">
+                                <select class="custom-select">
                                     <option></option>
                                 </select>
                             </div>
@@ -42,7 +42,7 @@
                         <div class="form-group">
                             <div class="form-line">
                                 <label>Image</label>
-                                <input type="file" class="form-control" placeholder="Item Name">
+                                <input type="file" class="form-control-file" placeholder="Item Name">
                             </div>
                         </div>
                     </div>

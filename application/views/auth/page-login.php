@@ -66,7 +66,7 @@
                         <img style="width: 200px" src="<?php echo base_url(); ?>assets/img/basic/logo-akure.png" alt="">
                         <h4 class="mt-2 p-b-20">Login Your Account.</h4>
                     </div>
-                    <form action="<?php echo base_url(); ?>dashboard" method="post">
+                    <form class="" action="<?php echo base_url(); ?>dashboard" method="post">
                         <div class="form-group has-icon"><i class="icon-envelope-o"></i>
                             <input type="text" class="form-control form-control-lg"
                                    placeholder="Email Address">

@@ -98,13 +98,73 @@
         </div>
         <ul class="sidebar-menu">
             <li class="header"><strong>MAIN NAVIGATION</strong></li>
-            <li ><a href="<?php echo base_url('dashboard'); ?>"><i class="icon icon-dashboard2 blue-text s-18"></i><span>Dashboard</span></a></li>
+            <li ><a href="<?php echo base_url('dashboard'); ?>"><i class="icon icon-dashboard2 cyan-text s-18"></i><span>Dashboard</span></a></li>
+            <li ><a href="#"><i class="icon icon-clipboard-edit red-text s-18"></i>Library<i
+                    class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url('categories'); ?>"><i class="icon icon-circle-o"></i>Item Library</a>
+                    </li>
+                    <li><a href="<?php echo base_url('modifiers'); ?>"><i class="icon icon-circle-o"></i>Modifiers</a>
+                    </li>
+                    <li><a href="<?php echo base_url('categories'); ?>"><i class="icon icon-circle-o"></i>Categories</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Promo</a>
+                    </li>
+                    <li><a href="<?php echo base_url('discount'); ?>"><i class="icon icon-circle-o"></i>Discount</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Taxes</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Gratuity</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Sales Type</a>
+                    </li>
+                </ul>
+            </li>
             <li ><a href="#"><i class="icon icon-package indigo-text s-18"></i>Inventory<i
                     class="icon icon-angle-left s-18 pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url('item'); ?>"><i class="icon icon-circle-o"></i>Item Library</a>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Summary</a>
                     </li>
-                    <li><a href="<?php echo base_url('categories'); ?>"><i class="icon icon-circle-o"></i>Categories</a>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Suppliers</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Purchase Order (PO)</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Transfer</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Adjustment</a>
+                    </li>
+                </ul>
+            </li>
+            <li ><a href="#"><i class="icon icon-people_outline orange-text s-18"></i>Customers<i
+                    class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href=""><i class="icon icon-circle-o"></i>Customers List</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Feedback</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Loyalty Program</a>
+                    </li>
+                </ul>
+            </li>
+            <li ><a href="#"><i class="icon icon-people_outline teal-text s-18"></i>Employe<i
+                    class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href=""><i class="icon icon-circle-o"></i>Role</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Staff</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>PIN Access</a>
+                    </li>
+                </ul>
+            </li>
+            <li ><a href="#"><i class="icon icon-favorite_border pink-text s-18"></i>Table Management<i
+                    class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href=""><i class="icon icon-circle-o"></i>Table Group</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Table Map</a>
+                    </li>
+                    <li><a href=""><i class="icon icon-circle-o"></i>Table Report</a>
                     </li>
                 </ul>
             </li>
@@ -115,18 +175,6 @@
 </aside>
 <!--Sidebar End-->
 <div class="has-sidebar-left">
-    <div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
-            <div class="search-bar">
-                <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
-                       placeholder="start typing...">
-            </div>
-            <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
-               aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
-        </div>
-    </div>
-</div>
     <div class="sticky">
         <div class="navbar navbar-expand navbar-dark d-flex justify-content-between bd-navbar blue lighten-2">
             <div class="relative">
@@ -141,7 +189,6 @@
         <li class="dropdown custom-dropdown user user-menu">
             <a href="#" class="nav-link" data-toggle="dropdown">
                 <img src="<?php echo base_url('assets/img/users.png'); ?>" class="user-image" alt="User Image">
-                <i class="icon-more_vert "></i>
             </a>
             <div class="dropdown-menu p-10">
                 <div class="row box justify-content-between my-4">
@@ -189,5 +236,6 @@
 </div>
 <!--/#app -->
 <script src="<?php echo base_url('assets/js/app.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/sweetalert.js'); ?>"></script>
 </body>
 </html>
