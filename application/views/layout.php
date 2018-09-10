@@ -102,7 +102,7 @@
             <li ><a href="#"><i class="icon icon-clipboard-edit red-text s-18"></i>Library<i
                     class="icon icon-angle-left s-18 pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url('categories'); ?>"><i class="icon icon-circle-o"></i>Item Library</a>
+                    <li><a href="<?php echo base_url('item'); ?>"><i class="icon icon-circle-o"></i>Item Library</a>
                     </li>
                     <li><a href="<?php echo base_url('modifiers'); ?>"><i class="icon icon-circle-o"></i>Modifiers</a>
                     </li>

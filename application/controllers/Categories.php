@@ -8,13 +8,21 @@ class Categories extends CI_Controller {
 		parent::__construct();
 		$this->load->model('category_model');
 		$this->load->library('form_validation');
+		$this->load->model('auth_model');
 	}
 
 	public function index(){
-		$data['categories']=$this->category_model->get_all_category();
-		$data['content'] = "categories/page-categories";
-		$data['title'] = 'Categories';
-		$this->load->view('layout',$data);
+		$data = array();
+        if($this->session->userdata('isUserLoggedIn')){
+            $data['user'] = $this->auth_model->getRows(array('id'=>$this->session->userdata('userId')));
+            //load the view
+            $data['categories']=$this->category_model->get_all_category();
+            $data['content'] = "categories/page-categories";
+			$data['title'] = 'Categories';
+            $this->load->view('layout',$data);
+        }else{
+            redirect('auth/login');
+        }
 
 	}
 
