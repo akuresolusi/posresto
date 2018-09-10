@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
  
 //This is the Book Model for CodeIgniter CRUD using Ajax Application.
-class Master_model extends CI_Model {
+class Category_model extends CI_Model {
  
     var $table = 'categories';
      

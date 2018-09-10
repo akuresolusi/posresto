@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title><?php echo $title; ?> &mdash; Point Of Sale</title>
+    <title>Sign Up &mdash; Point Of Sale</title>
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/app.css">
 </head>
@@ -58,7 +58,7 @@
 </div>
 <div id="app">
 <main>
-    <div id="primary" class="p-t-b-100 height-full ">
+    <div id="primary" class="p-t-b-80 height-full ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mx-md-auto">
@@ -67,25 +67,34 @@
                         <h4 class="mt-2 p-b-20">Create Your Account.</h4>
                     </div>
                     <form action="" method="post">
-                        <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                        <div class="form-group has-icon"><i class="icon-user-o"></i>
                             <input type="text" class="form-control form-control-lg"
-                                   placeholder="Email Address">
+                                   placeholder="Full Name" name="name" required="" value="<?php echo !empty($user['name'])?$user['name']:''; ?>">
+                            <?php echo form_error('name','<span class="text-red">','</span>'); ?>
+                        </div>
+                        <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                            <input type="email" class="form-control form-control-lg"
+                                   placeholder="Email Address" required="" name="email" value="<?php echo !empty($user['email'])?$user['email']:''; ?>">
+                            <?php echo form_error('email','<span class="text-red">','</span>'); ?>
                         </div>
                         <div class="form-group has-icon"><i class="icon-mobile-phone"></i>
                             <input type="text" class="form-control form-control-lg"
-                                   placeholder="Handphone">
+                                   placeholder="Handphone" required="" name="phone" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
                         </div>
                         <div class="form-group has-icon"><i class="icon-lock"></i>
-                            <input type="text" class="form-control form-control-lg"
-                                   placeholder="Password">
+                            <input type="password" class="form-control form-control-lg"
+                                   placeholder="Password"  name="password" required="">
+                            <?php echo form_error('password','<span class="text-red">','</span>'); ?>
                         </div>
                         <div class="form-group has-icon"><i class="icon-lock"></i>
-                            <input type="text" class="form-control form-control-lg"
-                                   placeholder="Confirm Password">
+                            <input type="password" class="form-control form-control-lg"
+                                   placeholder="Confirm Password" name="conf_password" required="">
+                            <?php echo form_error('conf_password','<span class="text-red">','</span>'); ?>
+
                         </div>
-                        <input type="submit" class="btn btn-success btn-lg btn-block" value="Sign Up">
+                        <input type="submit" name="regisSubmit" class="btn btn-block btn-success" value="Sign Up"/>
                         <div class="col-md-12 p-0 pt-2">
-                            <span><a href="<?php echo base_url(); ?>auth">&larrhk; Back to Login</a></span>
+                            <span><a href="<?php echo base_url(); ?>auth/login">&larrhk; Back to Login</a></span>
                         </div>
                                                  <div class="col-md-12 p-0 pt-2">
                             <p class="copyright text-center" style="font-size: 12px;">&copy; 2018 <a href="http://akure-solusi.com" target="_blank" id="Quick Count">Akure Solusi</a>. All Rights Reserved.</p>

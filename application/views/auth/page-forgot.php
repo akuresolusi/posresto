@@ -73,7 +73,7 @@
                         </div>
                         <input type="submit" class="btn btn-success btn-lg btn-block" value="Submit">
                         <div class="col-md-12 p-0 pt-2">
-                            <span><a href="<?php echo base_url(); ?>auth">&larrhk; Back to Login</a></span>
+                            <span><a href="<?php echo base_url(); ?>auth/login">&larrhk; Back to Login</a></span>
                         </div>
                                                  <div class="col-md-12 p-0 pt-2">
                             <p class="copyright text-center" style="font-size: 12px;">&copy; 2018 <a href="http://akure-solusi.com" target="_blank" id="Quick Count">Akure Solusi</a>. All Rights Reserved.</p>

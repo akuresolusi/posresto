@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title><?php echo $title; ?> &mdash; Point Of Sale</title>
+    <title>Login &mdash; Point Of Sale</title>
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/app.css">
 </head>
@@ -65,19 +65,34 @@
                     <div class="text-center">
                         <img style="width: 200px" src="<?php echo base_url(); ?>assets/img/basic/logo-akure.png" alt="">
                         <h4 class="mt-2 p-b-20">Login Your Account.</h4>
-                    </div>
-                    <form class="" action="<?php echo base_url(); ?>dashboard" method="post">
+                                <?php
+                                if(!empty($success_msg)){
+                                    echo '<div role="alert" class="alert alert-success">
+                                     <span class="statusMsg"><strong>'.$success_msg.'</strong></span>
+                                    </div>';
+                                   
+                                }elseif(!empty($error_msg)){
+                                    echo '<div role="alert" class="alert alert-danger">
+                                     <span class="statusMsg"><strong>'.$error_msg.'</strong></span>
+                                    </div>';
+                                }
+                                ?>
+                            </span>
+                        </div>
+                    <form action="" method="post">
                         <div class="form-group has-icon"><i class="icon-envelope-o"></i>
                             <input type="text" class="form-control form-control-lg"
-                                   placeholder="Email Address">
+                                   placeholder="Email Address" name="email" required="">
+                            <?php echo form_error('email','<span class="text-red">','</span>'); ?>
                         </div>
                         <div class="form-group has-icon"><i class="icon-lock"></i>
-                            <input type="text" class="form-control form-control-lg"
-                                   placeholder="Password">
+                            <input type="password" class="form-control form-control-lg"
+                                   name="password" placeholder="Password" required="">
+                            <?php echo form_error('password','<span class="text-red">','</span>'); ?>
                         </div>
-                        <input type="submit" class="btn btn-success btn-lg btn-block" value="Log In">
+                        <input type="submit" name="loginSubmit" class="btn btn-success btn-lg btn-block" value="Log In">
                         <div class="col-md-12 p-0 pt-2">
-                            <span>Not a member ? <a href="<?php echo base_url(); ?>auth/signup">Sign up now.</a></span>
+                            <span>Not a member ? <a href="<?php echo base_url(); ?>auth/registration">Sign up now.</a></span>
                             <span><a href="<?php echo base_url(); ?>auth/forgot" class="float-right">Forgot password ?</a></span>
                         </div>
                          <div class="col-md-12 p-0 pt-2">

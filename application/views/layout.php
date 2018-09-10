@@ -78,7 +78,7 @@
                         <img class="user_avatar" src="<?php echo base_url('assets/img/users.png'); ?>" alt="User Image">
                     </div>
                     <div class="float-left info">
-                        <h6 class="font-weight-light mt-2 mb-1">Firman</h6>
+                        <h6 class="font-weight-light mt-2 mb-1">Hi, <?php echo $user['name']; ?></h6>
                         <a href="#" class="text-success"><i class="icon-circle blink"></i> Online</a>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                         </a>
                         <a href="#" class="list-group-item list-group-item-action"><i
                                 class="mr-2 icon-lock text-purple"></i>Change Password</a>
-                        <a href="<?php echo base_url(); ?>" class="list-group-item list-group-item-action"><i
+                        <a href="<?php echo base_url(); ?>auth/logout" class="list-group-item list-group-item-action"><i
                                 class="mr-2 icon-sign-out text-red"></i>Logout</a>
                     </div>
                 </div>
@@ -183,8 +183,13 @@
                 </a>
             </div>
             <!--Top Menu Start -->
-<div class="navbar-custom-menu p-t-5">
+<div class="navbar-custom-menu p-t-5" style="font-size: 23px;">
     <ul class="nav navbar-nav">
+        <li>
+            <a href="#" class="nav-link ml-2" data-toggle="control-sidebar">
+                <i class="icon-store_mall_directory "></i>
+            </a>
+        </li>
         <!-- User Account-->
         <li class="dropdown custom-dropdown user user-menu">
             <a href="#" class="nav-link" data-toggle="dropdown">
@@ -203,7 +208,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a href="<?php echo base_url(); ?>">
+                        <a href="<?php echo base_url(); ?>auth/logout">
                             <i class="icon-sign-out red lighten-2 avatar  r-5"></i>
                             <div class="pt-1">Logout</div>
                         </a>
@@ -228,6 +233,45 @@
 
     </div>
 </div>
+<aside class="control-sidebar fixed white ">
+    <div class="slimScroll">
+        <div class="sidebar-header">
+            <h4>List Outlet </h4>
+            <a href="#" data-toggle="control-sidebar" class="paper-nav-toggle  active"><i></i></a>
+        </div>
+        <ul class="list-group no-b">
+            <a href="#">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                    <div>
+                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> Outlet 1
+                    </div>
+                    <div>
+                        <i class="icon-circle text-success"></i> <span class="text-success">Online</span>
+                    </div>
+                </li>
+            </a>
+            <a href="#">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                    <div>
+                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> Outlet 2
+                    </div>
+                    <div>
+                        <i class="icon-circle text-danger"></i> <span class="text-danger">Offline</span>
+                    </div>
+                </li>
+            </a>
+            <a href="#">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                    <div>
+                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> Outlet 3
+                    </div>
+                    <div>
+                        <i class="icon-circle text-success"></i> <span class="text-success">Online</span>
+                    </div>
+                </li>
+            </a>
+        </ul>
+    </div>
 </aside>
 <!-- /.right-sidebar -->
 <!-- Add the sidebar's background. This div must be placed

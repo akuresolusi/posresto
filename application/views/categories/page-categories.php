@@ -121,6 +121,7 @@
  
     function delete_category(id)
     {
+      if(confirm('Are you sure delete this data ?'))
         // ajax delete data from database
           $.ajax({
             url : "<?php echo site_url('categories/delete_by_id')?>/"+id,
@@ -135,6 +136,7 @@
             {
                 alert('Error deleting data');
             }
+            
         });
 
     }
