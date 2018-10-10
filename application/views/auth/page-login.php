@@ -65,29 +65,14 @@
                     <div class="text-center">
                         <img style="width: 200px" src="<?php echo base_url(); ?>assets/img/basic/logo-akure.png" alt="">
                         <h4 class="mt-2 p-b-20">Login Your Account.</h4>
-                                <?php
-                                if(!empty($success_msg)){
-                                    echo '<div role="alert" class="alert alert-success">
-                                     <span class="statusMsg"><strong>'.$success_msg.'</strong></span>
-                                    </div>';
-                                   
-                                }elseif(!empty($error_msg)){
-                                    echo '<div role="alert" class="alert alert-danger">
-                                     <span class="statusMsg"><strong>'.$error_msg.'</strong></span>
-                                    </div>';
-                                }
-                                ?>
-                            </span>
-                        </div>
-                    <form action="" method="post">
+                    </div>
+                    <?php echo form_open(''); ?>
                         <div class="form-group has-icon"><i class="icon-envelope-o"></i>
-                            <input type="text" class="form-control form-control-lg"
-                                   placeholder="Email Address" name="email" required="">
+                            <input type="email" class="form-control form-control-lg" placeholder="Email Address" name="email" value="<?php echo $this->input->post('email'); ?>">
                             <?php echo form_error('email','<span class="text-red">','</span>'); ?>
                         </div>
                         <div class="form-group has-icon"><i class="icon-lock"></i>
-                            <input type="password" class="form-control form-control-lg"
-                                   name="password" placeholder="Password" required="">
+                            <input type="password" class="form-control form-control-lg" name="password" placeholder="Password">
                             <?php echo form_error('password','<span class="text-red">','</span>'); ?>
                         </div>
                         <input type="submit" name="loginSubmit" class="btn btn-success btn-lg btn-block" value="Log In">
@@ -98,7 +83,7 @@
                          <div class="col-md-12 p-0 pt-2">
                             <p class="copyright text-center" style="font-size: 12px;">&copy; 2018 <a href="http://akure-solusi.com" target="_blank" id="Quick Count">Akure Solusi</a>. All Rights Reserved.</p>
                         </div>
-                    </form>
+                    <?php echo form_close(); ?>
                 </div>
             </div>
         </div>
@@ -111,5 +96,15 @@
 </div>
 <!--/#app -->
 <script src="<?php echo base_url(); ?>assets/js/app.js"></script>
+<script src="<?php echo base_url('assets/js/sweetalert.js'); ?>"></script>
+<script type="text/javascript">
+    <?php
+        $pesan = $this->session->flashdata('pesan');
+        if(!empty($pesan)){
+            echo"swal('".$pesan."')";
+        }
+    ?>
+</script>
+
 </body>
 </html>

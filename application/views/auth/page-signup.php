@@ -66,21 +66,34 @@
                         <img style="width: 200px" src="<?php echo base_url(); ?>assets/img/basic/logo-akure.png" alt="">
                         <h4 class="mt-2 p-b-20">Create Your Account.</h4>
                     </div>
-                    <form action="" method="post">
+                        <?php echo form_open(''); ?>
                         <div class="form-group has-icon"><i class="icon-user-o"></i>
                             <input type="text" class="form-control form-control-lg"
-                                   placeholder="Full Name" name="name" required="" value="<?php echo !empty($user['name'])?$user['name']:''; ?>">
+                                   placeholder="Full Name" name="name" required="" value="<?php echo $this->input->post('name'); ?>">
                             <?php echo form_error('name','<span class="text-red">','</span>'); ?>
                         </div>
                         <div class="form-group has-icon"><i class="icon-envelope-o"></i>
                             <input type="email" class="form-control form-control-lg"
-                                   placeholder="Email Address" required="" name="email" value="<?php echo !empty($user['email'])?$user['email']:''; ?>">
+                                   placeholder="Email Address" required="" name="email" value="<?php echo $this->input->post('email'); ?>">
                             <?php echo form_error('email','<span class="text-red">','</span>'); ?>
                         </div>
                         <div class="form-group has-icon"><i class="icon-mobile-phone"></i>
-                            <input type="text" class="form-control form-control-lg"
-                                   placeholder="Handphone" required="" name="phone" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+                            <input type="number" maxlength="13" class="form-control form-control-lg"
+                                   placeholder="Handphone" required="" name="phone" value="<?php echo $this->input->post('phone'); ?>">
                         </div>
+                        
+
+                        <div class="form-group has-icon"><i class="icon-lock"></i>
+                            <input type="text" class="form-control form-control-lg"
+                                   placeholder="Outlet Name" name="outlet" required="" value="<?php echo $this->input->post('outlet'); ?>">
+                            <?php echo form_error('outlet','<span class="text-red">','</span>'); ?>
+                        </div>
+                        <div class="form-group has-icon">
+                            <textarea class="form-control form-control-lg" placeholder="Outlet Address" name="address"><?php echo $this->input->post('address'); ?></textarea>
+                            <?php echo form_error('address','<span class="text-red">','</span>'); ?>
+                        </div>
+
+
                         <div class="form-group has-icon"><i class="icon-lock"></i>
                             <input type="password" class="form-control form-control-lg"
                                    placeholder="Password"  name="password" required="">
@@ -90,16 +103,21 @@
                             <input type="password" class="form-control form-control-lg"
                                    placeholder="Confirm Password" name="conf_password" required="">
                             <?php echo form_error('conf_password','<span class="text-red">','</span>'); ?>
-
                         </div>
+
                         <input type="submit" name="regisSubmit" class="btn btn-block btn-success" value="Sign Up"/>
+                        <?php echo form_close(); ?>
+
                         <div class="col-md-12 p-0 pt-2">
                             <span><a href="<?php echo base_url(); ?>auth/login">&larrhk; Back to Login</a></span>
                         </div>
-                                                 <div class="col-md-12 p-0 pt-2">
-                            <p class="copyright text-center" style="font-size: 12px;">&copy; 2018 <a href="http://akure-solusi.com" target="_blank" id="Quick Count">Akure Solusi</a>. All Rights Reserved.</p>
+                        <div class="col-md-12 p-0 pt-2">
+                            <p class="copyright text-center" style="font-size: 12px;">
+                                &copy; 2018 
+                                <a href="http://akure-solusi.com" target="_blank" id="Quick Count"> Akure Solusi </a>
+                                . All Rights Reserved.
+                            </p>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -112,5 +130,15 @@
 </div>
 <!--/#app -->
 <script src="<?php echo base_url(); ?>assets/js/app.js"></script>
+
+<script type="text/javascript">
+    <?php
+        $pesan = $this->session->flashdata('pesan');
+        if(!empty($pesan)){
+            echo"swal('".$pesan."')";
+        }
+    ?>
+</script>
+
 </body>
 </html>

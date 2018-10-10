@@ -14,10 +14,11 @@ class Discount extends CI_Controller {
             $data['user'] = $this->auth_model->getRows(array('id'=>$this->session->userdata('userId')));
             //load the view
             $data['content'] = "discount/page-discount";
-		$data['title'] = 'Discount';
+    		$data['title'] = 'Discount';
             $this->load->view('layout',$data);
         }else{
             redirect('auth/login');
         }
 	}
+    
 }
