@@ -7,46 +7,44 @@ class Category_model extends CI_Model {
     var $table = 'categories';
      
      
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
-        $this->load->database();
+
     }
      
      
-    public function get_all_category()
-    {
+    public function get_all_category(){
         $this->db->from('categories');
+        $this->db->where('idoutlet', $this->session->userdata('idoutlet'));
         $query=$this->db->get();
-        return $query->result();
+        return $query->result_array();
     }
      
      
-    public function get_by_id($id)
-    {
+    public function get_by_id($id){
         $this->db->from($this->table);
         $this->db->where('id',$id);
         $query = $this->db->get();
      
-    return $query->row();
+        return $query->row();
     }
      
-    public function add($data)
-    {
+    public function add($data){
         $this->db->insert($this->table, $data);
         return $this->db->insert_id();
+
     }
      
-    public function update_data($where, $data)
-    {
+    public function update_data($where, $data){
         $this->db->update($this->table, $data, $where);
         return $this->db->affected_rows();
+
     }
      
-    public function delete_by_id($id)
-    {
+    public function delete_by_id($id){
         $this->db->where('id', $id);
         $this->db->delete($this->table);
+    
     }
  
  

@@ -24,19 +24,30 @@
                         <th>Name</th>
                         <th>Category</th>
                         <th>Pricing</th>
-                        <th>in Stock</th>
-                        <th>Stock Alert</th>
+                        <th width="135px">Action</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <?php
+                        $i=0;
+                        foreach ($list as $value) {
+                        $i++;
+                    ?>
                         <tr>
-                            <td>1</td>
-                            <td>Kepiting Saus</td>
-                            <td>Seafood</td>
-                            <td>20.000</td>
-                            <td></td>
-                            <td></td>
+                            <td><?php echo $i; ?></td>
+                            <td><?php echo $value['name'] ?></td>
+                            <td><?php echo $value['categori'] ?></td>
+                            <td>Rp <?php echo $value['price'] ?></td>
+                            <td>
+                                <a href="#" class="btn btn-xs btn-primary">View</a>
+                                <a href="#" class="btn btn-xs btn-warning">Update</a>
+                                <a href="#" class="btn btn-xs btn-danger">Delete</a>
+                            </td>
                         </tr>
+                    <?php    
+                        } 
+                    ?>
+                        
                     </tbody>
                 </table>
             </div>

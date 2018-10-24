@@ -40,6 +40,13 @@ class Auth_model extends CI_Model{
                 );
         $this->db->insert('outlet', $datanya);
     }
+
+    function get_outlet($iduser){
+        $this->db->where('iduser', $iduser);
+        $this->db->order_by('id','desc');
+        $this->db->limit(1);
+        return $this->db->get('outlet')->row_array();
+    }
     
 
 }

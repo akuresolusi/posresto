@@ -26,13 +26,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($categories as $categorie){?>
+                        <?php foreach($categories as $categori){?>
                         <tr>
-                            <td><?php echo $categorie->id;?></td>
-                            <td><?php echo $categorie->categories_name;?></td>
+                            <td><?php echo $categori->id;?></td>
+                            <td><?php echo $categori->categori;?></td>
                             <td>
-                                <button class="btn btn-warning btn-xs" onclick="edit_category(<?php echo $categorie->id;?>)"><i class="icon-edit"></i></button>
-                                <button class="btn btn-danger btn-xs" onclick="delete_category(<?php echo $categorie->id;?>)"><i class="icon-trash"></i></button>
+                                <button class="btn btn-warning btn-xs" onclick="edit_category(<?php echo $categori->id;?>)"><i class="icon-edit"></i></button>
+                                <button class="btn btn-danger btn-xs" onclick="delete_category(<?php echo $categori->id;?>)"><i class="icon-trash"></i></button>
                             </td>
                         </tr>
                         <?php }?>
@@ -71,7 +71,7 @@
         success: function(data)
         {
             $('[name="id"]').val(data.id);
-            $('[name="categories_name"]').val(data.categories_name);
+            $('[name="categories_name"]').val(data.categori);
  
  
             $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
@@ -90,13 +90,10 @@
     function save_category()
     {
       var url;
-      if(save_method == 'add')
-      {
+      if(save_method == 'add'){
           url = "<?php echo site_url('categories/add')?>";
-      }
-      else
-      {
-        url = "<?php echo site_url('categories/update')?>";
+      }else{
+          url = "<?php echo site_url('categories/update')?>";
       }
         
 

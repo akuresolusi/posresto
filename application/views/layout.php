@@ -9,6 +9,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/app.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -78,7 +80,7 @@
                         <img class="user_avatar" src="<?php echo base_url('assets/img/users.png'); ?>" alt="User Image">
                     </div>
                     <div class="float-left info">
-                        <h6 class="font-weight-light mt-2 mb-1">Hi, Namanya</h6>
+                        <h6 class="font-weight-light mt-2 mb-1">Hi, <?php echo $this->session->userdata('name'); ?></h6>
                         <a href="#" class="text-success"><i class="icon-circle blink"></i> Online</a>
                     </div>
                 </div>
@@ -104,49 +106,11 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url('item'); ?>"><i class="icon icon-circle-o"></i>Item Library</a>
                     </li>
-                    <li><a href="<?php echo base_url('modifiers'); ?>"><i class="icon icon-circle-o"></i>Modifiers</a>
-                    </li>
                     <li><a href="<?php echo base_url('categories'); ?>"><i class="icon icon-circle-o"></i>Categories</a>
                     </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Promo</a>
-                    </li>
-                    <li><a href="<?php echo base_url('discount'); ?>"><i class="icon icon-circle-o"></i>Discount</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Taxes</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Gratuity</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Sales Type</a>
-                    </li>
                 </ul>
             </li>
-            <li ><a href="#"><i class="icon icon-package indigo-text s-18"></i>Inventory<i
-                    class="icon icon-angle-left s-18 pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href=""><i class="icon icon-circle-o"></i>Summary</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Suppliers</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Purchase Order (PO)</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Transfer</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Adjustment</a>
-                    </li>
-                </ul>
-            </li>
-            <li ><a href="#"><i class="icon icon-people_outline orange-text s-18"></i>Customers<i
-                    class="icon icon-angle-left s-18 pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href=""><i class="icon icon-circle-o"></i>Customers List</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Feedback</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Loyalty Program</a>
-                    </li>
-                </ul>
-            </li>
-            <li ><a href="#"><i class="icon icon-people_outline teal-text s-18"></i>Employe<i
+            <li><a href="#"><i class="icon icon-people_outline teal-text s-18"></i>Employe<i
                     class="icon icon-angle-left s-18 pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href=""><i class="icon icon-circle-o"></i>Role</a>

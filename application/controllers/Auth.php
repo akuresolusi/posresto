@@ -16,9 +16,19 @@ class Auth extends CI_Controller {
             $email = $this->input->post('email');
             $password = md5($this->input->post('password'));
             $cek = $this->auth_model->cek_login($email, $password);
-            if(count($cek) >= 1){
-                
+            if(!empty($cek) >= 1){
+                $outlet = $this->auth_model->get_outlet($cek['id']);
+                $userdata = array(  'iduser'    => $cek['id'],
+                                'name'      => $cek['name'],
+                                'email'     => $cek['email'],
+                                'phone'     => $cek['phone'],
+                                'idoutlet'  => $outlet['id'],
+                                'outlet'    => $outlet['outlet'],
+                                'address'   => $outlet['address']
+                        );
+                $this->session->set_userdata($userdata);
                 redirect('dashboard');
+
             }else{
                 $this->session->set_flashdata('pesan','Akun tidak ditemukan');
                 $this->load->view('auth/page-login');
@@ -59,8 +69,6 @@ class Auth extends CI_Controller {
     }
     
     public function logout(){
-        $this->session->unset_userdata('isUserLoggedIn');
-        $this->session->unset_userdata('userId');
         $this->session->sess_destroy();
         redirect('login');
     }
