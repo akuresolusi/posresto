@@ -1,14 +1,44 @@
-<header class="white lighten-2 relative nav-sticky p-0">
-    <div class="container-fluid ">
-        <div class="row p-t-b-20">
-            <div class="col-6">
-                <h4 class="text-blue mt-1 mb-0">
+<style type="text/css">
+    .title{
+        font-size: 12px;
+        margin-bottom: 5px;
+        color: #ccc;
+    }
+    .content{
+        font-size: 14px;
+        padding: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .list-group-item{
+        padding: 10px;
+    }
+    .foto img{
+        margin: 0 auto;
+        display: block;
+    }
+</style>
+<header class="blue lighten-2 relative">
+    <div class="container-fluid text-white">
+        <div class="row p-t-b-10 ">
+            <div class="col">
+                <h4>
+                    <i class="icon-package"></i>
                     <?php echo $title; ?>
                 </h4>
             </div>
-            <div class="col-6">
-                <a href="<?php echo base_url(); ?>item/add" class="btn btn-sm float-right btn-primary"><span class="icon-add"></span> Add Data</a>
-            </div>
+        </div>
+        <div class="row">
+            <ul class="nav responsive-tab nav-material nav-material-white">
+                <li>
+                    <a class="nav-link active" href="<?php echo base_url('item'); ?>"><i class="icon icon-list"></i>All Products</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="<?php echo base_url('item/add'); ?>"><i class="icon icon-plus-circle"></i> Add New Product</a>
+                </li>
+            </ul>
         </div>
     </div>
 </header>
@@ -21,10 +51,10 @@
                     <thead>
                     <tr>
                         <th width="10">No</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Pricing</th>
-                        <th width="135px">Action</th>
+                        <th>NAME</th>
+                        <th>CATEGORY</th>
+                        <th>PRICING</th>
+                        <th width="80"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,10 +68,10 @@
                             <td><?php echo $value['name'] ?></td>
                             <td><?php echo $value['categori'] ?></td>
                             <td>Rp <?php echo $value['price'] ?></td>
-                            <td>
-                                <a href="#" class="btn btn-xs btn-primary">View</a>
-                                <a href="#" class="btn btn-xs btn-warning">Update</a>
-                                <a href="#" class="btn btn-xs btn-danger">Delete</a>
+                            <td align="center">
+                                <a href="#" class="btn-fab btn-fab-sm shadow btn-primary" data-toggle="modal" data-target="#myModal"><i class="icon-eye"></i></a>
+                                <a href="#" class="btn-fab btn-fab-sm shadow btn-warning"><i class="icon-edit"></i></a>
+                                <a href="#" class="btn-fab btn-fab-sm shadow btn-danger"><i class="icon-close"></i></a>
                             </td>
                         </tr>
                     <?php    
@@ -52,5 +82,32 @@
                 </table>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- modal Form input -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+              <h4 class="modal-title">View Products</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <p class="text-muted title">Item Name</p>
+                    <h4 class="content"><?php echo $value['name'] ?></h4>
+                </li>
+                <li class="list-group-item">
+                    <p class="text-muted title">Category</p>
+                    <h4 class="content"><?php echo $value['categori'] ?></h4>
+                </li>
+            </ul>
+        </div>
+      </div>
+      
     </div>
 </div>

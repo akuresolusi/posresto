@@ -25,7 +25,7 @@ class Item extends CI_Controller {
 	public function index(){
         $data['list']      = $this->item_model->get_all();
         $data['content']   = "inventory/page-item";
-		$data['title']     = 'Item Library';
+		$data['title']     = 'Products';
         $this->load->view('layout',$data);
 	}
 
@@ -36,7 +36,7 @@ class Item extends CI_Controller {
         
         $data['categori']   = $this->category_model->get_all_category();
         $data['content']    = "inventory/input-item";
-        $data['title']      = 'Add Item Library';
+        $data['title']      = 'Products';
         $ss                 = $this->session->userdata();
 
         if ($this->form_validation->run() == FALSE) {
