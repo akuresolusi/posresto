@@ -87,9 +87,7 @@
                                     </td>
                                 </div>
                                 <div class="col-md-4">
-                                    <td style='border: none;'>
-                                        <a class='btn btn-sm btn-danger delete-row'>DEL</a>
-                                    </td>
+                                    <td style='border: none; padding:30px 0 5px 5px;'><a class='btn-fab btn-fab-sm shadow btn-danger delete-row' style='cursor:pointer;'><span class='icon-close2'></span></a>
                                 <div class="col-md-4">
                             </tr>
                             <?php                     
@@ -109,6 +107,7 @@
                         <div class="form-line">
                             <label>Description</label>
                             <textarea class="form-control" rows="6" name="desc"><?php echo $this->input->post('desc') ?></textarea>
+                            <input type="submit" >
                         </div>
                     </div>
                 </div>

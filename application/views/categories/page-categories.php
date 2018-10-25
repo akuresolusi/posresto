@@ -28,11 +28,11 @@
                     <tbody>
                         <?php foreach($categories as $categori){?>
                         <tr>
-                            <td><?php echo $categori->id;?></td>
-                            <td><?php echo $categori->categori;?></td>
+                            <td><?php echo $categori['id'];?></td>
+                            <td><?php echo $categori['categori'];?></td>
                             <td>
-                                <button class="btn btn-warning btn-xs" onclick="edit_category(<?php echo $categori->id;?>)"><i class="icon-edit"></i></button>
-                                <button class="btn btn-danger btn-xs" onclick="delete_category(<?php echo $categori->id;?>)"><i class="icon-trash"></i></button>
+                                <button class="btn btn-warning btn-xs" onclick="edit_category(<?php echo $categori['id'];?>)"><i class="icon-edit"></i></button>
+                                <button class="btn btn-danger btn-xs" onclick="delete_category(<?php echo $categori['categori'];?>)"><i class="icon-trash"></i></button>
                             </td>
                         </tr>
                         <?php }?>

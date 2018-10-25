@@ -115,6 +115,21 @@ class Item extends CI_Controller {
 
     }
 
+    public function json_detail_item(){
+        $id = $this->input->get('id');
+        $iditem = $this->input->post_get($id);
+        $data = $this->item_model->get_detail($id);
+        $data_images = $this->item_model->get_image($id);
+        $data_variant = $this->item_model->get_variant($id);
+        array_push($data, $data_variant);
+        array_push($data, $data_images);
+        echo json_encode($data);
+
+        // [item][value] untuk item
+        // [item][0][value] untuk variant item
+        // [item][1][0][value] untuk image
+    }
+
 
 	
 }

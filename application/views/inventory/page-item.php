@@ -69,7 +69,7 @@
                             <td><?php echo $value['categori'] ?></td>
                             <td>Rp <?php echo $value['price'] ?></td>
                             <td align="center">
-                                <a href="#" class="btn-fab btn-fab-sm shadow btn-primary" data-toggle="modal" data-target="#myModal"><i class="icon-eye"></i></a>
+                                <a value_id="<?php echo $value['iditem'] ?>"  class="btn-fab btn-fab-sm shadow btn-primary view-item" ><i class="icon-eye"></i></a>
                                 <a href="#" class="btn-fab btn-fab-sm shadow btn-warning"><i class="icon-edit"></i></a>
                                 <a href="#" class="btn-fab btn-fab-sm shadow btn-danger"><i class="icon-close"></i></a>
                             </td>
@@ -99,11 +99,42 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     <p class="text-muted title">Item Name</p>
-                    <h4 class="content"><?php echo $value['name'] ?></h4>
+                    <h4 class="content" id="modal_name"></h4>
                 </li>
                 <li class="list-group-item">
                     <p class="text-muted title">Category</p>
-                    <h4 class="content"><?php echo $value['categori'] ?></h4>
+                    <h4 class="content" id="modal_categori"></h4>
+                </li>
+                <li class="list-group-item">
+                    <p class="text-muted title">Harga</p>
+                    <h4 class="content" id="modal_price"></h4>
+                </li>
+                <li class="list-group-item">
+                    <p class="text-muted title">description</p>
+                    <h4 class="content" id="modal_desc"></h4>
+                </li>
+                <li class="list-group-item">
+                    <p class="text-muted title">image</p>
+                    <h4 class="content">
+                        <img src="" id="modal_image" hight='200px' />
+                    </h4>
+                </li>
+                <li class="list-group-item">
+                    <p class="text-muted title">Variant</p>
+                    <div class="content">
+                        <table align="center" id="list-variant">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Item Name</th>
+                                    <th>Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- varint list -->
+                            </tbody>
+                        </table>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -111,3 +142,39 @@
       
     </div>
 </div>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+    $(".view-item").click(function() {
+        var id = $(this).attr('value_id');
+        // alert(id);
+        $.ajax({ 
+            type: 'GET', 
+            url: '<?php echo base_url('item/json_detail_item'); ?>?id=' + id, 
+            data: { get_param: 'value' }, 
+            success: function(data) { 
+                var obj = $.parseJSON(data);
+                $("#modal_name").html(obj['name']);
+                $("#modal_categori").html(obj['categori']);
+                $("#modal_price").html(obj['price']);
+                $("#modal_desc").html(obj['desc']);
+                $("#modal_image").attr('src' ,'<?php echo base_url('assets/gambar/'); ?>' + obj['iduser'] + '/' + obj[1][0]['image']);
+
+                var i = 0;
+                $.each(obj[0], function(index, value) {
+                    i++;
+                    var markup = "<tr><td>" + i + "</td><td>" + value['name'] + "</td><td>" + value['price'] + "</td></tr>";
+                    $("#list-variant tbody").append(markup);
+                });
+
+                $('#myModal').modal('show');
+                
+            }
+        });
+    });
+
+});
+
+</script>
