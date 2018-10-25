@@ -162,6 +162,8 @@ $(document).ready(function () {
                 $("#modal_desc").html(obj['desc']);
                 $("#modal_image").attr('src' ,'<?php echo base_url('assets/gambar/'); ?>' + obj['iduser'] + '/' + obj[1][0]['image']);
 
+
+                $("#list-variant tbody").html('');
                 var i = 0;
                 $.each(obj[0], function(index, value) {
                     i++;
