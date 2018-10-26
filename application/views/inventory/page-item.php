@@ -1,8 +1,10 @@
 <style type="text/css">
     .title{
         font-size: 12px;
+        margin-top: 0px;
         margin-bottom: 5px;
         color: #ccc;
+        display: inline;
     }
     .content{
         font-size: 14px;
@@ -10,12 +12,13 @@
         margin-top: 5px;
         margin-bottom: 5px;
         font-weight: 600;
-        text-transform: uppercase;
+        display: inline;
+
     }
     .list-group-item{
         padding: 10px;
     }
-    .foto img{
+    .img{
         margin: 0 auto;
         display: block;
     }
@@ -36,7 +39,7 @@
                     <a class="nav-link active" href="<?php echo base_url('item'); ?>"><i class="icon icon-list"></i>All Products</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="<?php echo base_url('item/add'); ?>"><i class="icon icon-plus-circle"></i> Add New Product</a>
+                    <a class="nav-link" href="<?php echo base_url('item/add'); ?>"><i class="icon icon-plus"></i> Add Products</a>
                 </li>
             </ul>
         </div>
@@ -69,9 +72,9 @@
                             <td><?php echo $value['categori'] ?></td>
                             <td>Rp <?php echo $value['price'] ?></td>
                             <td align="center">
-                                <a value_id="<?php echo $value['iditem'] ?>"  class="btn-fab btn-fab-sm shadow btn-primary view-item" ><i class="icon-eye"></i></a>
+                                <a style="cursor: pointer;" value_id="<?php echo $value['iditem'] ?>"  class="btn-fab btn-fab-sm shadow btn-primary view-item" ><i class="icon-eye"></i></a>
                                 <a href="#" class="btn-fab btn-fab-sm shadow btn-warning"><i class="icon-edit"></i></a>
-                                <a href="#" class="btn-fab btn-fab-sm shadow btn-danger"><i class="icon-close"></i></a>
+                                <a href="#" class="btn-fab btn-fab-sm shadow btn-danger"><i class="icon-trash"></i></a>
                             </td>
                         </tr>
                     <?php    
@@ -92,51 +95,52 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-              <h4 class="modal-title">View Products</h4>
+              <h5 class="modal-title">Detail Products</h5>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="modal-body">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <p class="text-muted title">Item Name</p>
-                    <h4 class="content" id="modal_name"></h4>
-                </li>
-                <li class="list-group-item">
-                    <p class="text-muted title">Category</p>
-                    <h4 class="content" id="modal_categori"></h4>
-                </li>
-                <li class="list-group-item">
-                    <p class="text-muted title">Harga</p>
-                    <h4 class="content" id="modal_price"></h4>
-                </li>
-                <li class="list-group-item">
-                    <p class="text-muted title">description</p>
-                    <h4 class="content" id="modal_desc"></h4>
-                </li>
-                <li class="list-group-item">
-                    <p class="text-muted title">image</p>
-                    <h4 class="content">
-                        <img src="" id="modal_image" hight='200px' />
-                    </h4>
-                </li>
-                <li class="list-group-item">
-                    <p class="text-muted title">Variant</p>
-                    <div class="content">
-                        <table align="center" id="list-variant">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Item Name</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- varint list -->
-                            </tbody>
-                        </table>
-                    </div>
-                </li>
-            </ul>
+        <div class="modal-body p-2">
+            <div class="row" style="padding: 0 15px;">
+                <div class="col-md-12 mb-3 mt-2">
+                    <img src="" id="modal_image" class="img" width="150" />
+                </div>
+                <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <td width="100px"><p class="text-muted title">Item Name</p></td>
+                            <td colspan="3"><h4 class="content" id="modal_name"></h4></td>
+                        </tr>
+                        <tr>
+                            <td><p class="text-muted title">Category</p></td>
+                            <td><h4 class="content" id="modal_categori"></h4></td>
+                        </tr>
+                        <tr>
+                            <td><p class="text-muted title">Price</p></td>
+                            <td><h4 class="content" id="modal_price"></h4></td>
+                        </tr>
+                        <tr>
+                            <td><p class="text-muted title">Description</p></td>
+                            <td colspan="3"><h4 class="content" id="modal_desc"></h4></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div class="col-md-12 mb-2 p-2">
+                    <h6><strong>List Variant</strong></h6>
+                </div>
+                    <table id="list-variant" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th width="10">No</th>
+                                <th>Item Name</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- varint list -->
+                        </tbody>
+                    </table>
+                </div>
         </div>
       </div>
       

@@ -1,4 +1,26 @@
-<header class="white lighten-2 relative nav-sticky p-0">
+<header class="blue lighten-2 relative">
+    <div class="container-fluid text-white">
+        <div class="row p-t-b-10 ">
+            <div class="col">
+                <h4>
+                    <i class="icon-quote-right"></i>
+                    <?php echo $title; ?>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="nav responsive-tab nav-material nav-material-white">
+                <li>
+                    <a class="nav-link active" href="<?php echo base_url('categories'); ?>"><i class="icon icon-list"></i>All Categories</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#" onclick="add_category()"><i class="icon icon-plus"></i> Add Categories</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- <header class="white lighten-2 relative nav-sticky p-0">
     <div class="container-fluid ">
         <div class="row p-t-b-20">
             <div class="col-6">
@@ -11,7 +33,7 @@
             </div>
         </div>
     </div>
-</header>
+</header> -->
 <div class="row p-3">
     <div class="col-md-12">
         <div class="card">
@@ -22,7 +44,7 @@
                     <tr>
                         <th width="10">No</th>
                         <th>Category Name</th>
-                        <th width="40"></th>
+                        <th width="50"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -30,9 +52,9 @@
                         <tr>
                             <td><?php echo $categori['id'];?></td>
                             <td><?php echo $categori['categori'];?></td>
-                            <td>
-                                <button class="btn btn-warning btn-xs" onclick="edit_category(<?php echo $categori['id'];?>)"><i class="icon-edit"></i></button>
-                                <button class="btn btn-danger btn-xs" onclick="delete_category(<?php echo $categori['categori'];?>)"><i class="icon-trash"></i></button>
+                            <td align="center">
+                                <a style="cursor: pointer;" class="btn-fab btn-fab-sm shadow btn-warning" onclick="edit_category(<?php echo $categori['id'];?>)"><i class="icon-edit"></i></a>
+                                <a  style="cursor: pointer;" class="btn-fab btn-fab-sm shadow btn-danger" onclick="delete_category(<?php echo $categori['id'];?>)"><i class="icon-trash"></i></a>
                             </td>
                         </tr>
                         <?php }?>

@@ -15,7 +15,7 @@
                     <a class="nav-link" href="<?php echo base_url('item'); ?>"><i class="icon icon-list"></i>All Products</a>
                 </li>
                 <li>
-                    <a class="nav-link active" href="<?php echo base_url('item/add'); ?>"><i class="icon icon-plus-circle"></i> Add New Product</a>
+                    <a class="nav-link active" href="<?php echo base_url('item/add'); ?>"><i class="icon icon-plus"></i> Add Product</a>
                 </li>
             </ul>
         </div>
@@ -99,7 +99,7 @@
                     <div class="form-group col-md-12">
                         <div class="form-line">
                             <label>Image</label>
-                            <input type="file" class="form-control-file" accept="image/png, image/jpeg" name="gambar" onchange="readURL(this);">
+                            <input type="file" class="form-control" accept="image/png, image/jpeg" name="gambar" onchange="readURL(this);">
                             <img id="blah" src="#" class="img-responsive align-center mt-3" style="max-height: 200px; " />
                         </div>
                     </div>
@@ -107,8 +107,11 @@
                         <div class="form-line">
                             <label>Description</label>
                             <textarea class="form-control" rows="6" name="desc"><?php echo $this->input->post('desc') ?></textarea>
-                            <input type="submit" >
                         </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <button type="submit" class="btn btn-sm btn-success"><span class="icon-save"></span> Save</button>
+                        <button type="reset" class="btn btn-sm btn-danger"><span class="icon-close"></span> Cancel</button>
                     </div>
                 </div>
             </div>
@@ -126,7 +129,7 @@
         
 
         $("#add-variant").click(function(){
-            var markup = "<tr><td style='border: none; padding-left: 0;'><label>Item Name</label><input type='text' name='variantname[]'  class='form-control'></td><td style='border: none;  width='20%'><label>Price</label> <input type='number' name='variantprice[]' required='' class='form-control'></td><td style='border: none; padding:30px 0 5px 5px;'><a class='btn-fab btn-fab-sm shadow btn-danger delete-row' style='cursor:pointer;'><span class='icon-close2'></span></a></td></tr>";
+            var markup = "<tr><td style='border: none; padding-left: 0;'><label>Item Name</label><input type='text' name='variantname[]'  class='form-control'></td><td style='border: none;  width='20%'><label>Price</label> <input type='number' name='variantprice[]' required='' class='form-control'></td><td style='border: none; padding:30px 0 5px 5px;'><a class='btn-fab btn-fab-sm shadow btn-danger delete-row' style='cursor:pointer;'><span class='icon-close'></span></a></td></tr>";
             $("#table-variant tbody").append(markup);
         });
 

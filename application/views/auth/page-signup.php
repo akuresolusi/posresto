@@ -58,54 +58,71 @@
 </div>
 <div id="app">
 <main>
-    <div id="primary" class="p-t-b-80 height-full ">
+    <div id="primary" class="p-t-b-80 height-full" >
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mx-md-auto">
+                <div class="col-lg-6 mx-md-auto p-0">
                     <div class="text-center">
                         <img style="width: 200px" src="<?php echo base_url(); ?>assets/img/basic/logo-akure.png" alt="">
                         <h4 class="mt-2 p-b-20">Create Your Account.</h4>
                     </div>
                         <?php echo form_open(''); ?>
-                        <div class="form-group has-icon"><i class="icon-user-o"></i>
-                            <input type="text" class="form-control form-control-lg"
-                                   placeholder="Full Name" name="name" required="" value="<?php echo $this->input->post('name'); ?>">
-                            <?php echo form_error('name','<span class="text-red">','</span>'); ?>
+                        <div class="row">
+                        <div class="col-md-6 p-1">
+                            <div class="form-group has-icon"><i class="icon-user-o"></i>
+                                <input type="text" class="form-control form-control-lg"
+                                       placeholder="Full Name" name="name" required="" value="<?php echo $this->input->post('name'); ?>">
+                                <?php echo form_error('name','<span class="text-red">','</span>'); ?>
+                            </div>
                         </div>
-                        <div class="form-group has-icon"><i class="icon-envelope-o"></i>
-                            <input type="email" class="form-control form-control-lg"
-                                   placeholder="Email Address" required="" name="email" value="<?php echo $this->input->post('email'); ?>">
-                            <?php echo form_error('email','<span class="text-red">','</span>'); ?>
+                        <div class="col-md-6 p-1">
+                            <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                <input type="email" class="form-control form-control-lg"
+                                       placeholder="Email Address" required="" name="email" value="<?php echo $this->input->post('email'); ?>">
+                                <?php echo form_error('email','<span class="text-red">','</span>'); ?>
+                            </div>
                         </div>
-                        <div class="form-group has-icon"><i class="icon-mobile-phone"></i>
-                            <input type="number" maxlength="13" class="form-control form-control-lg"
-                                   placeholder="Handphone" required="" name="phone" value="<?php echo $this->input->post('phone'); ?>">
-                        </div>
-                        
-
-                        <div class="form-group has-icon"><i class="icon-lock"></i>
-                            <input type="text" class="form-control form-control-lg"
-                                   placeholder="Outlet Name" name="outlet" required="" value="<?php echo $this->input->post('outlet'); ?>">
-                            <?php echo form_error('outlet','<span class="text-red">','</span>'); ?>
-                        </div>
-                        <div class="form-group has-icon">
-                            <textarea class="form-control form-control-lg" placeholder="Outlet Address" name="address"><?php echo $this->input->post('address'); ?></textarea>
-                            <?php echo form_error('address','<span class="text-red">','</span>'); ?>
+                        <div class="col-md-6 p-1">
+                            <div class="form-group has-icon"><i class="icon-mobile-phone"></i>
+                                <input type="number" maxlength="13" class="form-control form-control-lg"
+                                       placeholder="Handphone" required="" name="phone" value="<?php echo $this->input->post('phone'); ?>">
+                            </div>
                         </div>
 
-
-                        <div class="form-group has-icon"><i class="icon-lock"></i>
-                            <input type="password" class="form-control form-control-lg"
-                                   placeholder="Password"  name="password" required="">
-                            <?php echo form_error('password','<span class="text-red">','</span>'); ?>
-                        </div>
-                        <div class="form-group has-icon"><i class="icon-lock"></i>
-                            <input type="password" class="form-control form-control-lg"
-                                   placeholder="Confirm Password" name="conf_password" required="">
-                            <?php echo form_error('conf_password','<span class="text-red">','</span>'); ?>
+                        <div class="col-md-6 p-1">
+                            <div class="form-group has-icon"><i class="icon-store_mall_directory "></i>
+                                <input type="text" class="form-control form-control-lg"
+                                       placeholder="Outlet Name" name="outlet" required="" value="<?php echo $this->input->post('outlet'); ?>">
+                                <?php echo form_error('outlet','<span class="text-red">','</span>'); ?>
+                            </div>
                         </div>
 
-                        <input type="submit" name="regisSubmit" class="btn btn-block btn-success" value="Sign Up"/>
+                        <div class="col-md-12 p-1">
+                            <div class="form-group has-icon">
+                                <textarea class="form-control r-0" rows="3" placeholder="Outlet Address" name="address"><?php echo $this->input->post('address'); ?></textarea>
+                                <?php echo form_error('address','<span class="text-red">','</span>'); ?>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p-1">
+                            <div class="form-group has-icon"><i class="icon-lock"></i>
+                                <input type="password" class="form-control form-control-lg"
+                                       placeholder="Password"  name="password" required="">
+                                <?php echo form_error('password','<span class="text-red">','</span>'); ?>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p-1">
+                            <div class="form-group has-icon"><i class="icon-lock"></i>
+                                <input type="password" class="form-control form-control-lg"
+                                       placeholder="Confirm Password" name="conf_password" required="">
+                                <?php echo form_error('conf_password','<span class="text-red">','</span>'); ?>
+                            </div>
+                        </div>
+                        <div class="col-md-12 p-1">
+                            <button type="submit" name="regisSubmit" class="btn btn-block btn-success"> Sign Up</button>
+                        </div>
+                        </div>
                         <?php echo form_close(); ?>
 
                         <div class="col-md-12 p-0 pt-2">

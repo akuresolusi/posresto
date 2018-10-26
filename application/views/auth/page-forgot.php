@@ -58,7 +58,7 @@
 </div>
 <div id="app">
 <main>
-    <div id="primary" class="p-t-b-100 height-full ">
+    <div id="primary" class="p-t-b-80 height-full ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mx-md-auto">

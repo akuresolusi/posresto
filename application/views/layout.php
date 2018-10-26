@@ -77,7 +77,7 @@
             <div class="user-panel p-3 light mb-2">
                 <div>
                     <div class="float-left image">
-                        <img class="user_avatar" src="<?php echo base_url('assets/img/users.png'); ?>" alt="User Image">
+                        <img class="user_avatar" src="<?php echo base_url('assets/img/img-user.png'); ?>" alt="User Image">
                     </div>
                     <div class="float-left info">
                         <h6 class="font-weight-light mt-2 mb-1">Hi, <?php echo $this->session->userdata('name'); ?></h6>
@@ -157,7 +157,7 @@
         <!-- User Account-->
         <li class="dropdown custom-dropdown user user-menu">
             <a href="#" class="nav-link" data-toggle="dropdown">
-                <img src="<?php echo base_url('assets/img/users.png'); ?>" class="user-image" alt="User Image">
+                <img src="<?php echo base_url('assets/img/img-user.png'); ?>" class="user-image" alt="User Image">
             </a>
             <div class="dropdown-menu p-10">
                 <div class="row box justify-content-between my-4">
