@@ -110,7 +110,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="#"><i class="icon icon-people_outline teal-text s-18"></i>Employe</a></li>
+            <li><a href="<?php echo base_url('employee'); ?>"><i class="icon icon-people_outline teal-text s-18"></i>Employe</a></li>
             <li ><a href="#"><i class="icon icon-favorite_border pink-text s-18"></i>Table Management</a>
             </li>
             <li><a href="<?php echo base_url('pos'); ?>"><i class="icon icon-desktop_windows green-text s-18"></i><span>Point Of Sale</span></a></li>
