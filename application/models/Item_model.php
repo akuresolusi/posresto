@@ -23,8 +23,26 @@ class Item_model extends CI_Model {
         return $this->db->insert_id();
     }
 
+    public function update($data, $id){
+        $this->db->where('id', $id);
+        $this->db->update('items',$data);
+        return;
+    }
+
+    public function delete($id){
+        $this->db->where('id', $id);
+        $this->db->delete('items');
+        return;
+    }
+
     public function add_image($data){
         $this->db->insert('images',$data);
+        return;
+    }
+
+    public function update_image($data, $iditem){
+        $this->db->where('iditem', $iditem);
+        $this->db->update('images',$data);
         return;
     }
 
@@ -44,11 +62,33 @@ class Item_model extends CI_Model {
         return $this->db->get()->result_array(); 
     }
 
-    public function get_image($id){
-        $this->db->from('images');
+    public function get_item_and_variant($id){
         $this->db->order_by('id','desc');
+        $this->db->where('id', $id)->or_where('idvariant', $id);
+        return $this->db->get('items')->result_array();   
+    }
+
+    public function delete_item_and_variant($id){
+        $this->db->where('id', $id)->or_where('idvariant', $id);
+        $this->db->delete('items');
+        return;
+    }
+
+    public function get_image($id){
         $this->db->where('iditem', $id);
-        return $this->db->get()->result_array();    
+        $this->db->order_by('id','desc');
+        return $this->db->get('images')->result_array();    
+    }
+
+    public function delete_image($iditem){
+        $this->db->where('iditem', $iditem);
+        $this->db->delete('images');
+        return;
+    }
+
+    public function cek_transaksi_item($iditem){
+        $this->db->where('iditem', $iditem);
+        return $this->db->get('tran_items')->result_array();
     }
 
  

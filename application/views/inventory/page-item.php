@@ -63,8 +63,9 @@
                     <tbody>
                     <?php
                         $i=0;
-                        foreach ($list as $value) {
+                        foreach ($list as $value){
                         $i++;
+                        $iditem = $this->encrypt->encode($value['iditem']);
                     ?>
                         <tr>
                             <td><?php echo $i; ?></td>
@@ -72,9 +73,9 @@
                             <td><?php echo $value['categori'] ?></td>
                             <td>Rp <?php echo $value['price'] ?></td>
                             <td align="center">
-                                <a style="cursor: pointer;" value_id="<?php echo $value['iditem'] ?>"  class="btn-fab btn-fab-sm shadow btn-primary view-item" ><i class="icon-eye"></i></a>
-                                <a href="#" class="btn-fab btn-fab-sm shadow btn-warning"><i class="icon-edit"></i></a>
-                                <a href="#" class="btn-fab btn-fab-sm shadow btn-danger"><i class="icon-trash"></i></a>
+                                <a style="cursor: pointer;" value_id="<?php echo $iditem ?>"  class="btn-fab btn-fab-sm shadow btn-primary view-item" ><i class="icon-eye"></i></a>
+                                <a style="cursor: pointer;" value_id="<?php echo $value['iditem']; ?>" class="btn-fab btn-fab-sm shadow btn-warning update-item"><i class="icon-edit"></i></a>
+                                <a style="cursor: pointer;" value_id="<?php echo $iditem; ?>" class="btn-fab btn-fab-sm shadow btn-danger delete-item"><i class="icon-trash"></i></a>
                             </td>
                         </tr>
                     <?php    
@@ -156,9 +157,9 @@ $(document).ready(function () {
         // alert(id);
         $.ajax({ 
             type: 'GET', 
-            url: '<?php echo base_url('item/json_detail_item'); ?>?id=' + id, 
-            data: { get_param: 'value' }, 
-            success: function(data) { 
+            url: '<?php echo base_url('item/json_detail_item/'); ?>', 
+            data: { id : id }, 
+            success: function(data){ 
                 var obj = $.parseJSON(data);
                 $("#modal_name").html(obj['name']);
                 $("#modal_categori").html(obj['categori']);
@@ -180,6 +181,32 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    $(".update-item").click(function() {
+        var id = $(this).attr('value_id');
+        window.location.href = "<?php echo base_url('item/update/'); ?>" + id;
+    });
+
+    $(document).on("click", ".delete-item", function(){
+        var id      = $(this).attr('value_id');
+        var element = $(this).parents("tr");
+        $.ajax({ 
+            type: 'GET', 
+            url: '<?php echo base_url('item/delete_item/'); ?>', 
+            data: {id : id}, 
+            success: function(data){
+                var data = $.parseJSON(data); 
+                if(data['status'] == 'true'){
+                    swal('Item ' + name + ' ' + ' Serta Variant pada item berhasil dihapus');
+                    element.remove();
+                }else{
+                    swal('Tidak dapat dihapus item ' + name + ' atau variant telah ditransaksikan');
+                }
+            }
+        });
+    });
+
 
 });
 

@@ -110,27 +110,8 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="#"><i class="icon icon-people_outline teal-text s-18"></i>Employe<i
-                    class="icon icon-angle-left s-18 pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href=""><i class="icon icon-circle-o"></i>Role</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Staff</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>PIN Access</a>
-                    </li>
-                </ul>
-            </li>
-            <li ><a href="#"><i class="icon icon-favorite_border pink-text s-18"></i>Table Management<i
-                    class="icon icon-angle-left s-18 pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href=""><i class="icon icon-circle-o"></i>Table Group</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Table Map</a>
-                    </li>
-                    <li><a href=""><i class="icon icon-circle-o"></i>Table Report</a>
-                    </li>
-                </ul>
+            <li><a href="#"><i class="icon icon-people_outline teal-text s-18"></i>Employe</a></li>
+            <li ><a href="#"><i class="icon icon-favorite_border pink-text s-18"></i>Table Management</a>
             </li>
             <li><a href="<?php echo base_url('pos'); ?>"><i class="icon icon-desktop_windows green-text s-18"></i><span>Point Of Sale</span></a></li>
             <!-- <li class="header light mt-3"><strong>UI COMPONENTS</strong></li> -->
