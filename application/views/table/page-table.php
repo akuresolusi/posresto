@@ -29,11 +29,9 @@
                     <thead>
                     <tr>
                         <th width="10px">No</th>
-                        <th>Email</th>
                         <th>Name</th>
-                        <th>Phone</th>
-                        <th width="50px">Payment</th>
-                        <th width="50px"></th>
+                        <th width="200px">Use Status</th>
+                        <th width="100px"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -41,22 +39,17 @@
                     $i=0;
                     foreach ($data as $value) {
                     $i++;
-                    $payment = "-";
-                    if($value['a_payment'] == 1){
-                        $payment = "Yes";
-                    }
                     $id = $this->encrypt->encode($value['id']);
                     ?>
                     <tr>
                        <td><?php echo $i; ?></td>
-                       <td><?php echo $value['email']; ?></td>
                        <td><?php echo $value['name']; ?></td>
-                       <td><?php echo $value['phone']; ?></td>
-                       <td align="center"><?php echo $payment; ?></td>
+                       <td></td>
                        <td align="center" width="100px">
                             <a style="cursor: pointer;" value_id="<?php echo $id ?>" class="btn-fab btn-fab-sm shadow btn-warning btn-update"><i class="icon-edit"></i></a>
-                            <a  style="cursor: pointer;" value_id="<?php echo $id ?>" 
-                                value_email="<?php echo $value['email'] ?>"class="btn-fab btn-fab-sm shadow btn-danger hapus-employee"><i class="icon-trash"></i></a>
+                            <a style="cursor: pointer;" value_id="<?php echo $id ?>"
+                            value_name="<?php echo $value['name'] ?>" 
+                            class="btn-fab btn-fab-sm shadow btn-danger hapus-table"><i class="icon-trash"></i></a>
                         </td>
                     </tr>
                     <?php
@@ -84,20 +77,8 @@
       <form id="form-input">
       <div class="modal-body">
             <div class="form-group">
-                <label>Email</label>
-                <input type="text" name="email" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Full Name</label>
+                <label>Table Name</label>
                 <input type="text" name="name" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Phone</label>
-                <input type="number" name="phone" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Payment transaction</label><br/>
-                <input type="checkbox" name="payment" autocomplete="off">
             </div>
       </div>
         <div class="modal-footer">
@@ -128,21 +109,9 @@
       <form id="form-update">
       <div class="modal-body">
             <div class="form-group">
-                <label>Email</label>
+                <label>Table Name</label>
                 <input type="hidden" id="input-id" name="id" value="">
-                <input type="text" id="input-email" readonly name="email" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Full Name</label>
                 <input type="text" id="input-name" name="name" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Phone</label>
-                <input type="number" id="input-phone" name="phone" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Payment transaction</label><br/>
-                <input type="checkbox" id="input-payment" name="payment">
             </div>
       </div>
         <div class="modal-footer">
@@ -163,7 +132,7 @@ $("#form-input").submit(function(e){
     e.preventDefault();
     var form_data = $(this).serialize();
     $.ajax({
-        url : "<?php echo base_url('employee/ajax_add'); ?>",
+        url : "<?php echo base_url('table/ajax_add'); ?>",
         type: "post",
         data : form_data
     }).done(function(response){
@@ -173,7 +142,7 @@ $("#form-input").submit(function(e){
             setTimeout(function(){ 
                 $('#loading').modal('hide');
                 reset_form();
-                swal("Pegawai berhasil ditambahkan, password login telah dikirim pada email terdaftar").then((value) => {
+                swal("Meja berhasil ditambahkan").then((value) => {
                     location.reload();
                 });
             },500);
@@ -186,9 +155,7 @@ $("#form-input").submit(function(e){
             }, 500);
            
         }else{
-
            location.reload();
-
         }
 
     });
@@ -202,20 +169,13 @@ $(".btn-update").click(function(){
     var id = $(this).attr('value_id');
     $('#loading').modal('show');
     $.ajax({
-        url : "<?php echo base_url('employee/ajax_detail'); ?>",
+        url : "<?php echo base_url('table/ajax_detail'); ?>",
         type: "post",
         data : {id:id},
         success: function(result){
             var data = $.parseJSON(result);
             $("#input-id").val(data['id']);
-            $("#input-email").val(data['email']);
             $("#input-name").val(data['name']);
-            $("#input-phone").val(data['phone']);
-            if(data['a_payment'] == "1"){
-                $("#input-payment").attr("checked", "checked");
-            }else{
-                $("#input-payment").removeAttr('checked');
-            }
             setTimeout(function(){ 
                 $('#loading').modal('hide');
                 $("#modal-update").modal("show");
@@ -234,7 +194,7 @@ $("#form-update").submit(function(e){
     var form_data = $(this).serialize();
 
     $.ajax({
-        url : "<?php echo base_url('employee/ajax_update'); ?>",
+        url : "<?php echo base_url('table/ajax_update'); ?>",
         type: "post",
         data : form_data
     }).done(function(response){
@@ -245,43 +205,38 @@ $("#form-update").submit(function(e){
             setTimeout(function(){ 
                 $('#loading').modal('hide');
                 reset_form();
-                swal("Data pegawai berhasil diperbarui").then((value) => {
+                swal("Data meja berhasil diperbarui").then((value) => {
                     location.reload();
                 });
             }, 500);
 
-        }else if(data['status'] == 'gagal'){
+        }else{
             setTimeout(function(){ 
                 $('#loading').modal('hide');
                 swal(data['pesan']).then((value) => {
                     $('#modal-update').modal('show');
                 });
             }, 500);
-           
-        }else{
-
-           location.reload();
-
         }
 
     });
 });
 
 
-$(".hapus-employee").click(function(){
+$(".hapus-table").click(function(){
 
     var id = $(this).attr('value_id');
-    var email = $(this).attr('value_email');
+    var name = $(this).attr('value_name');
     swal({
         title: "Apakah Kamu Yakin?",
-        text: "Setelah dihapus, akun "+ email +" tidak dapat digunakan untuk login",
+        text: "Setelah dihapus, meja "+ name +" tidak dapat digunakan",
         buttons: true,
         dangerMode: true,
     }).then((willDelete) => {
         if(willDelete){
             $("#loading").modal('show');
             $.ajax({
-                url : "<?php echo base_url('employee/ajax_delete_employee'); ?>",
+                url : "<?php echo base_url('table/ajax_delete_table'); ?>",
                 type: "post",
                 data : {id:id},
                 success: function(result){
@@ -289,7 +244,7 @@ $(".hapus-employee").click(function(){
                     if(data['status'] == "sukses"){
                         setTimeout(function(){
                             $("#loading").modal('hide'); 
-                            swal("akun dengan email " + email + " berhasil dihapus",{
+                            swal("Meja  " + name + " berhasil dihapus",{
                                 icon: "success",
                             }).then((value) => {
                                 location.reload();
@@ -298,7 +253,7 @@ $(".hapus-employee").click(function(){
                     }else{
                         setTimeout(function(){
                             $("#loading").modal('hide'); 
-                            swal("akun gagal dihapus",{
+                            swal("Meja gagal dihapus",{
                                 icon: "error",
                             });
                         },500);

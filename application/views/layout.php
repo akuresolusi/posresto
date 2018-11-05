@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -111,7 +112,7 @@
                 </ul>
             </li>
             <li><a href="<?php echo base_url('employee'); ?>"><i class="icon icon-people_outline teal-text s-18"></i>Employe</a></li>
-            <li ><a href="#"><i class="icon icon-favorite_border pink-text s-18"></i>Table Management</a>
+            <li ><a href="<?php echo base_url('table'); ?>"><i class="icon icon-favorite_border pink-text s-18"></i>Table Management</a>
             </li>
             <li><a href="<?php echo base_url('pos'); ?>"><i class="icon icon-desktop_windows green-text s-18"></i><span>Point Of Sale</span></a></li>
             <!-- <li class="header light mt-3"><strong>UI COMPONENTS</strong></li> -->
@@ -127,14 +128,21 @@
                     <i></i>
                 </a>
             </div>
+
+            <h1 class="white-text"><?php echo $this->session->userdata()['outlet']; ?></h1>
+
             <!--Top Menu Start -->
 <div class="navbar-custom-menu p-t-5" style="font-size: 23px;">
     <ul class="nav navbar-nav">
+        <?php
+        
+        ?>
         <li>
             <a href="#" class="nav-link ml-2" data-toggle="control-sidebar">
                 <i class="icon-store_mall_directory "></i>
             </a>
         </li>
+        <?php ?>
         <!-- User Account-->
         <li class="dropdown custom-dropdown user user-menu">
             <a href="#" class="nav-link" data-toggle="dropdown">
@@ -224,6 +232,27 @@
 <div class="control-sidebar-bg shadow white fixed"></div>
 </div>
 <!--/#app -->
+
+
+<!-- Modal Loading Dialog -->
+<div id="loading" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        Loading...
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
 <script src="<?php echo base_url('assets/js/app.js'); ?>"></script>
 <script src="<?php echo base_url('assets/js/sweetalert.js'); ?>"></script>
 </body>

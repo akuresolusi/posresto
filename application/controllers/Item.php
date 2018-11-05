@@ -48,7 +48,7 @@ class Item extends CI_Controller {
 
             if(!empty($_FILES["gambar"]['name'])){
                 //upload image
-                $file_name = $this->upload_image('gambar', $ss['iduser']);
+                $file_name = $this->upload_image('gambar', $ss['idoutlet']);
                 
                 //jika upload error
                 if($file_name ==  false){
@@ -131,7 +131,7 @@ class Item extends CI_Controller {
 
             if(!empty($_FILES["gambar"]['name'])){
                 //upload image
-                $file_name = $this->upload_image('gambar', $ss['iduser']);
+                $file_name = $this->upload_image('gambar', $ss['idoutlet']);
                 
                 //jika upload error
                 if($file_name ==  false){
@@ -158,7 +158,7 @@ class Item extends CI_Controller {
 
                     //unlink file image
                     $ss = $this->session->userdata();
-                    @unlink("assets/gambar/".$ss['iduser']."/".$image);
+                    @unlink("assets/gambar/".$ss['idoutlet']."/".$image);
                 }
 
 
@@ -199,9 +199,9 @@ class Item extends CI_Controller {
         }
     }
 
-    public function upload_image($name, $iduser){
+    public function upload_image($name, $idoutlet){
 
-        $config['upload_path']          = 'assets/gambar/'.$iduser;
+        $config['upload_path']          = 'assets/gambar/'.$idoutlet;
         $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1000;
         $file_ext                       = pathinfo($_FILES["gambar"]["name"], PATHINFO_EXTENSION);
@@ -209,8 +209,8 @@ class Item extends CI_Controller {
         $config['file_name']            = $file_name;
         $this->upload->initialize($config);
 
-        if (!is_dir('assets/gambar/'.$iduser)){
-            mkdir('assets/gambar/'.$iduser, 0777, TRUE);
+        if (!is_dir('assets/gambar/'.$idoutlet)){
+            mkdir('assets/gambar/'.$idoutlet, 0777, TRUE);
         }
 
         if(!$this->upload->do_upload('gambar')){
