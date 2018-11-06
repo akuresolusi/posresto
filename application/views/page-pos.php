@@ -158,7 +158,7 @@
 </div>
         </div>
     </header>
-    <div class="container-fluid relative animatedParent animateOnce my-3">
+    <div class="container-fluid relative animatedParent animateOnce">
         <?php $this->load->view($isi); ?>
     </div>
 </div>

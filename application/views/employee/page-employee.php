@@ -28,12 +28,12 @@
                        data-options='{ "paging": true; "searching":true}' id="table_id">
                     <thead>
                     <tr>
-                        <th width="10px">No</th>
+                        <th width="10">No</th>
                         <th>Email</th>
                         <th>Name</th>
                         <th>Phone</th>
-                        <th width="50px">Payment</th>
-                        <th width="50px"></th>
+                        <th width="50">Payment</th>
+                        <th width="50"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -53,7 +53,7 @@
                        <td><?php echo $value['name']; ?></td>
                        <td><?php echo $value['phone']; ?></td>
                        <td align="center"><?php echo $payment; ?></td>
-                       <td align="center" width="100px">
+                       <td align="center">
                             <a style="cursor: pointer;" value_id="<?php echo $id ?>" class="btn-fab btn-fab-sm shadow btn-warning btn-update"><i class="icon-edit"></i></a>
                             <a  style="cursor: pointer;" value_id="<?php echo $id ?>" 
                                 value_email="<?php echo $value['email'] ?>"class="btn-fab btn-fab-sm shadow btn-danger hapus-employee"><i class="icon-trash"></i></a>
@@ -96,8 +96,11 @@
                 <input type="number" name="phone" class="form-control" autocomplete="off">
             </div>
             <div class="form-group">
-                <label>Payment transaction</label><br/>
-                <input type="checkbox" name="payment" autocomplete="off">
+                <label>Payment Transaction</label>
+                <div class="material-switch">
+                    <input id="save-payment" type="checkbox" name="payment" autocomplete="off">
+                    <label for="save-payment" class="bg-success"></label>
+                </div>
             </div>
       </div>
         <div class="modal-footer">
@@ -141,8 +144,11 @@
                 <input type="number" id="input-phone" name="phone" class="form-control" autocomplete="off">
             </div>
             <div class="form-group">
-                <label>Payment transaction</label><br/>
-                <input type="checkbox" id="input-payment" name="payment">
+                <label>Payment Transaction</label>
+                <div class="material-switch">
+                    <input id="input-payment" type="checkbox" name="payment" autocomplete="off">
+                    <label for="input-payment" class="bg-success"></label>
+                </div>
             </div>
       </div>
         <div class="modal-footer">
@@ -245,7 +251,11 @@ $("#form-update").submit(function(e){
             setTimeout(function(){ 
                 $('#loading').modal('hide');
                 reset_form();
-                swal("Data pegawai berhasil diperbarui").then((value) => {
+                swal({
+                    title: "Success!",
+                    text: "Data pegawai berhasil diperbarui.",
+                    icon: "success",
+                }).then((value) => {
                     location.reload();
                 });
             }, 500);
@@ -273,8 +283,9 @@ $(".hapus-employee").click(function(){
     var id = $(this).attr('value_id');
     var email = $(this).attr('value_email');
     swal({
-        title: "Apakah Kamu Yakin?",
-        text: "Setelah dihapus, akun "+ email +" tidak dapat digunakan untuk login",
+        title: "Are you sure?",
+        text: "Setelah dihapus, Akun "+ email +" tidak dapat digunakan untuk login.",
+        icon: "warning",
         buttons: true,
         dangerMode: true,
     }).then((willDelete) => {
@@ -308,7 +319,5 @@ $(".hapus-employee").click(function(){
         }
     });
 });
-
-
 
 </script>

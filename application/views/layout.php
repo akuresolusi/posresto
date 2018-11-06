@@ -129,7 +129,7 @@
                 </a>
             </div>
 
-            <h1 class="white-text"><?php echo $this->session->userdata()['outlet']; ?></h1>
+            <h1 class="white-text"></h1>
 
             <!--Top Menu Start -->
 <div class="navbar-custom-menu p-t-5" style="font-size: 23px;">
@@ -196,27 +196,7 @@
             <a href="#">
                 <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
                     <div>
-                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> Outlet 1
-                    </div>
-                    <div>
-                        <i class="icon-circle text-success"></i> <span class="text-success">Online</span>
-                    </div>
-                </li>
-            </a>
-            <a href="#">
-                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
-                    <div>
-                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> Outlet 2
-                    </div>
-                    <div>
-                        <i class="icon-circle text-danger"></i> <span class="text-danger">Offline</span>
-                    </div>
-                </li>
-            </a>
-            <a href="#">
-                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
-                    <div>
-                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> Outlet 3
+                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> <?php echo $this->session->userdata()['outlet']; ?>
                     </div>
                     <div>
                         <i class="icon-circle text-success"></i> <span class="text-success">Online</span>
@@ -236,13 +216,21 @@
 
 <!-- Modal Loading Dialog -->
 <div id="loading" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
 
     <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-        Loading...
+    <div class="modal-content" id="custom-modal-body">
+      <div class="modal-body text-center" >
+        <div class="preloader-wrapper medium active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
         </div>
       </div>
     </div>
