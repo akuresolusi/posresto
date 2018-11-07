@@ -87,7 +87,10 @@
     z-index: 9998;
     text-align: center;
 }
-
+#name-outlet{
+  color: #fff;
+  font-size: 16px;
+}
 .plane-container {
     position: absolute;
     top: 50%;

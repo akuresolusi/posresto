@@ -76,7 +76,7 @@
                         <img class="user_avatar" src="<?php echo base_url(); ?>assets/img/users.png" alt="User Image">
                     </div>
                     <div class="float-left info">
-                        <h6 class="font-weight-light mt-2 mb-1">Agus Setiawan</h6>
+                        <h6 class="font-weight-light mt-2 mb-1">Firman</h6>
                         <a href="#" class="text-success"><i class="icon-circle blink"></i> Online</a>
                     </div>
                 </div>

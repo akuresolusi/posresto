@@ -71,10 +71,6 @@
             <img src="<?php echo base_url('assets/img/basic/logo-akure.png'); ?>" alt="">
         </div>
         <div class="relative">
-            <a data-toggle="collapse" href="#userSettingsCollapse" role="button" aria-expanded="false"
-               aria-controls="userSettingsCollapse" class="btn-fab btn-fab-sm fab-right fab-top btn-primary shadow1 ">
-                <i class="icon icon-cog"></i>
-            </a>
             <div class="user-panel p-3 light mb-2">
                 <div>
                     <div class="float-left image">
@@ -83,18 +79,6 @@
                     <div class="float-left info">
                         <h6 class="font-weight-light mt-2 mb-1">Hi, <?php echo $this->session->userdata('name'); ?></h6>
                         <a href="#" class="text-success"><i class="icon-circle blink"></i> Online</a>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="collapse multi-collapse" id="userSettingsCollapse">
-                    <div class="list-group mt-3 shadow">
-                        <a href="#" class="list-group-item list-group-item-action ">
-                            <i class="mr-2 icon-user text-blue"></i>Profile
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action"><i
-                                class="mr-2 icon-lock text-purple"></i>Change Password</a>
-                        <a href="<?php echo base_url(); ?>auth/logout" class="list-group-item list-group-item-action"><i
-                                class="mr-2 icon-sign-out text-red"></i>Logout</a>
                     </div>
                 </div>
             </div>
@@ -137,6 +121,9 @@
         <?php
         
         ?>
+        <li>
+            <span id="name-outlet"><?php echo $this->session->userdata()['outlet']; ?></span>
+        </li>
         <li>
             <a href="#" class="nav-link ml-2" data-toggle="control-sidebar">
                 <i class="icon-store_mall_directory "></i>
@@ -194,14 +181,14 @@
         </div>
         <ul class="list-group no-b">
             <a href="#">
-                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                <!-- <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
                     <div>
-                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> <?php echo $this->session->userdata()['outlet']; ?>
+                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> 
                     </div>
                     <div>
                         <i class="icon-circle text-success"></i> <span class="text-success">Online</span>
                     </div>
-                </li>
+                </li> -->
             </a>
         </ul>
     </div>
