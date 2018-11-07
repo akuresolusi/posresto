@@ -1,39 +1,10 @@
 <style type="text/css">
 </style>
 <div class="row">
-    <!-- LIST CATEGORY -->
-    <!-- <div class="col-md-2 mb-3">
-        <div class="card">
-            <div class="card-header white"><i class="icon-tag-cord blue-text"></i> <strong>CATEGORY</strong></div>
-            <div class="card-body p-0">
-                <ul class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action">FAVORITE</a>
-                    <a href="#" class="list-group-item list-group-item-action">BREAKFAST</a>
-                    <a href="#" class="list-group-item list-group-item-action">SEAFOOD</a>
-                    <a href="#" class="list-group-item list-group-item-action">SOFTDRINK</a>
-                    <a href="#" class="list-group-item list-group-item-action">FRUIT JUICE</a>
-                    <a href="#" class="list-group-item list-group-item-action">BREAD</a>
-                </ul>
-            </div>
-        </div>
-    </div> -->
-    <!-- END LIST CATEGORY -->
-
-    <!-- LIST MENU -->
     <div class="col-md-8 p-0">
        
         <div class="card" style="border-right: 0; border-radius: 0;">
             <div class="card-body">
-                <!-- <ul class="nav responsive-tab nav-material nav-material-blue mb-3">
-                  <li>
-                      <a class="nav-link active" href="#"><i class="icon icon-quote-right"></i>Categories</a>
-                  </li>
-                  <li>
-                      <a class="nav-link" href="#"><i class="icon icon-plus"></i> Barcode</a>
-                  </li>
-                </ul> -->
-
-                <!-- SEARCH -->
                 <div class="row pl-3 pr-3">
                   <div class="col-10 p-0">
                     <div class="input-group focused">
@@ -69,171 +40,170 @@
                 <!-- END SEARCH -->
 
                 <!-- MENU -->
-                <div class="row mt-3 mb-0 p-2 white">
-                    <div class="col-md-12 p-0"><h5 class="mb-2 ml-2">TOP FOOD & DRINK</h5></div>
-                        <div class="row p-3 pt-0 p-t-0 slimScroll" data-height="450">
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span">20.000</span>
+                <div class="row mt-2 mb-0 p-2 white">
+                    <div class="row p-3 pt-0 p-t-0 slimScroll" data-height="490">
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span">20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-2">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-2">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-2 p-0">
-                                    <div class="mb-1">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-2 p-0">
+                                <div class="mb-1">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
-                            <div class="col-md-2 col-6 pr-2 pl-2">
-                                <div class="paper-block text-center mb-0 p-0">
-                                    <div class="mb-2">
-                                       <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                    </div>
-                                    <h6 class="mb-1">Nasi Goreng</h6>
-                                    <span>20.000</span>
+                        </div>
+                        <div class="col-md-2 col-6 pr-2 pl-2">
+                            <div class="paper-block text-center mb-0 p-0">
+                                <div class="mb-2">
+                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
+                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <span>20.000</span>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
