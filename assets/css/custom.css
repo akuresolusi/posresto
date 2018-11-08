@@ -185,3 +185,16 @@ input[type=number]::-webkit-inner-spin-button {
 .swal-text{
   text-align: center;
 }
+.order-type:hover{
+  background: #f5f8fa;
+}
+.label-payment{
+  background: #fff;
+  border:1px solid #eee;
+  border-right: none;
+  padding: 10px;
+}
+.btn-add-payment{
+  height: 50px;
+  border-radius: 0;
+}

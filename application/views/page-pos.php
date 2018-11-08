@@ -181,6 +181,6 @@
             $('#numpad4column .qtyInput').numpad();
         });
     });
-    </script>
+</script>
 </body>
 </html>
