@@ -75,6 +75,13 @@
                             <input type="password" class="form-control form-control-lg" name="password" placeholder="Password">
                             <?php echo form_error('password','<span class="text-red">','</span>'); ?>
                         </div>
+                        <div class="form-group">
+                            <select class="form-control" name="type">
+                                <option value="e">Employee</option>
+                                <option value="o">Owner</option>
+                            </select>
+                            <?php echo form_error('type','<span class="text-red">','</span>'); ?>
+                        </div>
                         <input type="submit" name="loginSubmit" class="btn btn-success btn-lg btn-block" value="Log In">
                         <div class="col-md-12 p-0 pt-2">
                             <span>Not a member ? <a href="<?php echo base_url(); ?>auth/registration">Sign up now.</a></span>

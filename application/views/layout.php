@@ -96,7 +96,7 @@
                 </ul>
             </li>
             <li><a href="<?php echo base_url('employee'); ?>"><i class="icon icon-people_outline teal-text s-18"></i>Employe</a></li>
-            <li ><a href="<?php echo base_url('table'); ?>"><i class="icon icon-favorite_border pink-text s-18"></i>Table Management</a>
+            <li ><a href="<?php echo base_url('table'); ?>"><i class="icon icon-favorite_border pink-text s-18"></i>Data Tables</a>
             </li>
             <li><a href="<?php echo base_url('pos'); ?>"><i class="icon icon-desktop_windows green-text s-18"></i><span>Point Of Sale</span></a></li>
             <!-- <li class="header light mt-3"><strong>UI COMPONENTS</strong></li> -->
@@ -118,10 +118,7 @@
             <!--Top Menu Start -->
 <div class="navbar-custom-menu p-t-5" style="font-size: 23px;">
     <ul class="nav navbar-nav">
-        <?php
-        
-        ?>
-        <li>
+        <li data-toggle="control-sidebar" style="cursor: pointer;">
             <span id="name-outlet"><?php echo $this->session->userdata()['outlet']; ?></span>
         </li>
         <li>
@@ -173,6 +170,9 @@
 
     </div>
 </div>
+
+
+<?php if($this->session->userdata()['type'] == "o"){ ?>
 <aside class="control-sidebar fixed white ">
     <div class="slimScroll">
         <div class="sidebar-header">
@@ -180,19 +180,28 @@
             <a href="#" data-toggle="control-sidebar" class="paper-nav-toggle  active"><i></i></a>
         </div>
         <ul class="list-group no-b">
-            <a href="#">
-                <!-- <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+            
+        <?php
+            $list = $this->session->userdata('list_outlet');
+            foreach ($list as $value) {
+            ?>
+            <a href="<?php echo base_url('auth/change_outlet/'.$value['id']); ?>">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
                     <div>
-                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span> 
+                        <span class="icon-store_mall_directory text-blue" style="font-size: 16px;"></span>
+                        <?php echo $value['outlet'] ?> 
                     </div>
-                    <div>
-                        <i class="icon-circle text-success"></i> <span class="text-success">Online</span>
-                    </div>
-                </li> -->
+                </li>
             </a>
+            <?php
+            }
+        ?>
         </ul>
     </div>
 </aside>
+<?php } ?>
+
+
 <!-- /.right-sidebar -->
 <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->

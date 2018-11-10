@@ -8,9 +8,8 @@ class Item extends CI_Controller {
         parent::__construct();	
 
         //Cek data session user
-    
         $ss = $this->session->userdata();
-        if(empty($ss['iduser'])){
+        if(empty($ss['iduser']) && empty($ss['idemployee'])){
             $this->session->sess_destroy();
             redirect('login');
         }else{
@@ -18,7 +17,7 @@ class Item extends CI_Controller {
                 echo "Session Outlet Kosong";
             }
         }
-
+        
         $this->load->model('category_model');
         $this->load->model('item_model');
         $this->load->library('upload');    

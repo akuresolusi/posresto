@@ -6,16 +6,23 @@ class Auth_model extends CI_Model{
     
     }
 
-    function cek_login($email, $password){
+    function cek_login($email, $password, $table){
         $this->db->where('email', $email);
         $this->db->where('password', $password);
         $this->db->limit('1');
-        return $this->db->get('users')->row_array();
+        return $this->db->get($table)->row_array();
     }
 
     function cek_email($email){
         $this->db->where('email', $email);
+        $this->db->where('status', "1");
         return $this->db->get('users')->result_array();
+    }
+
+    function cek_status_email($email, $table){
+        $this->db->where('email', $email);
+        $this->db->where('status', "1");
+        return $this->db->get($table)->row_array();
     }
 
     function daftar_user($data){
@@ -43,10 +50,23 @@ class Auth_model extends CI_Model{
 
     function get_outlet($iduser){
         $this->db->where('iduser', $iduser);
+        $this->db->where('status', "1");
         $this->db->order_by('id','desc');
-        $this->db->limit(1);
+        return $this->db->get('outlet')->result_array();
+    }
+
+    function get_detail_outlet($id){
+        $this->db->where('id', $id);
+        $this->db->where('status', "1");
         return $this->db->get('outlet')->row_array();
     }
-    
 
+    function update_password($email, $password, $table){
+        $data = array('password' => $password);
+        $this->db->where('email', $email);
+        $this->db->update($table, $data);
+        return;
+    }
+
+ 
 }

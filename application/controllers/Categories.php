@@ -8,7 +8,7 @@ class Categories extends CI_Controller {
 
 		//Cek data session user
         $ss = $this->session->userdata();
-        if(empty($ss['iduser'])){
+        if(empty($ss['iduser']) && empty($ss['idemployee'])){
             $this->session->sess_destroy();
             redirect('login');
         }else{

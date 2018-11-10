@@ -8,7 +8,7 @@ class Employee extends CI_Controller {
 
 		//Cek data session user
         $ss = $this->session->userdata();
-        if(empty($ss['iduser'])){
+        if(empty($ss['iduser']) && empty($ss['idemployee'])){
             $this->session->sess_destroy();
             redirect('login');
         }else{
@@ -113,38 +113,7 @@ class Employee extends CI_Controller {
 
     }
 
-    public function reset_employee($to, $name, $password){
-    		$config = Array(
-			'protocol' => 'smtp',
-			'smtp_host' => 'ssl://smtp.gmail.com',
-			'smtp_port' => 465,
-			'smtp_user' => 'akurepos@gmail.com',
-			'smtp_pass' => 'akurepos123',
-			'mailtype'  => 'html', 
-			'charset'   => 'iso-8859-1'
-		);
-
-		$this->load->library('email', $config);
-		$this->email->set_newline("\r\n");
-
-		$this->email->from('akurepos@gmail.com', 'Akure POS');
-        $this->email->to($to); 
-
-        $this->email->subject('Akure POS | Reset Akun Pegawai');
-        $this->email->message('
-        	Hi <b>'. $name.'</b> <br/>
-        	Password akun pegawai kamu telah direset<br/>
-        	Email : <b> '.$to.'</b> <br/>
-        	Password Baru :<b> '.$password.'</b>
-        ');
-
-		if($this->email->send()){
-			return true;
-		}else{
-			return false;
-		}
-
-    }
+    
 
 
     public function ajax_update(){
