@@ -15,6 +15,7 @@ class Item_model extends CI_Model {
         $this->db->join('categories', 'items.idcategori=categories.id', 'inner');
         $this->db->order_by('items.id','desc');
         $this->db->where('items.idvariant', null);
+        $this->db->where('items.idoutlet', $this->session->userdata()['idoutlet']);
         return $this->db->get()->result_array(); 
     }
 

@@ -164,7 +164,7 @@ $(document).ready(function () {
                 $("#modal_categori").html(obj['categori']);
                 $("#modal_price").html(obj['price']);
                 $("#modal_desc").html(obj['desc']);
-                $("#modal_image").attr('src' ,'<?php echo base_url('assets/gambar/'); ?>' + obj['idoutlet'] + '/' + obj[1][0]['image']);
+                $("#modal_image").attr('src' ,'<?php echo base_url('assets/gambar/'); ?>' + obj['idoutlet'] + '/small/' + obj[1][0]['image']);
 
 
                 $("#list-variant tbody").html('');

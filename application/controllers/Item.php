@@ -158,6 +158,7 @@ class Item extends CI_Controller {
                     //unlink file image
                     $ss = $this->session->userdata();
                     @unlink("assets/gambar/".$ss['idoutlet']."/".$image);
+                    @unlink("assets/gambar/".$ss['idoutlet']."/small/".$image);
                 }
 
 
@@ -200,24 +201,61 @@ class Item extends CI_Controller {
 
     public function upload_image($name, $idoutlet){
 
-        $config['upload_path']          = 'assets/gambar/'.$idoutlet;
-        $config['allowed_types']        = 'jpg|png';
-        $config['max_size']             = 1000;
+        $config = array('upload_path'   => 'assets/gambar/'.$idoutlet,
+                        'allowed_types' => 'jpg|png|jpeg',
+                        'max_size'      => '4000',
+                        'max_width'     => '3000',
+                        'max_height'    => '3000'
+                    );
         $file_ext                       = pathinfo($_FILES["gambar"]["name"], PATHINFO_EXTENSION);
         $file_name                      = mt_rand().".". $file_ext;
         $config['file_name']            = $file_name;
+
         $this->upload->initialize($config);
 
+        //jika folder belum ada
         if (!is_dir('assets/gambar/'.$idoutlet)){
             mkdir('assets/gambar/'.$idoutlet, 0777, TRUE);
+            mkdir('assets/gambar/'.$idoutlet.'/small', 0777, TRUE);
         }
 
         if(!$this->upload->do_upload('gambar')){
             return false;
         }else{
+            //membuat gambar small dan memperkecil gambar utama
+            $this->create_small_image($config['upload_path']."/", $file_name);
             return $file_name;
         }
 
+    }
+
+    public function create_small_image($path, $file_name){
+            //Membuat gambar kecil di folder small
+            $config['image_library']   = 'gd2';
+            $config['source_image']    = $path.$file_name;
+            $config['new_image']       = $path."/small/";
+            $config['create_thumb']    = TRUE;
+            $config['thumb_marker']    = "";
+            $config['maintain_ratio']  = TRUE;
+            $config['width']           = 280;
+            $config['height']          = 216;
+
+            $this->load->library('image_lib', $config);
+            
+            $this->image_lib->resize();
+            $this->image_lib->clear();
+
+            //resize gambar utama
+            $config2['image_library']   = 'gd2';
+            $config2['source_image']    = $path.$file_name;
+            $config2['create_thumb']    = FALSE;
+            $config2['maintain_ratio']  = TRUE;
+            // $config2['quality']         = "10%";
+            $config2['width']           = 921;
+            $config2['height']          = 691;
+            $this->image_lib->initialize($config2);
+            $this->image_lib->resize();    
+            
     }
 
     public function json_detail_item(){
