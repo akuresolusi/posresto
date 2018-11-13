@@ -224,74 +224,14 @@
             <div class="card-header white pr-2 pl-3">
                 <p style="display: inline;"><i class="icon-clipboard-edit blue-text"></i>
                 <strong> LIST ORDER </strong> </p>
-                <a href="#" class="btn button-act btn-primary r-30 float-right" data-toggle="popover" data-trigger="hover" data-content="Create New Customer"><i class="fal fa-user-plus"></i></a>
-                <a href="#" class="btn button-act btn-primary r-30 float-right mr-2" data-toggle="popover" data-trigger="hover" data-content="List Hold Order"><i class="fal fa-list"></i></a>
+                <a href="#" class="btn button-act btn-primary r-30 float-right" data-toggle="modal" data-target="#ModalBayar"><i class="fal fa-plus"></i></a>
+                <a href="#" class="btn button-act btn-primary r-30 float-right mr-2" data-toggle="modal" data-target="#ModalHold"><i class="fal fa-list"></i></a>
             </div>
             <div class="card-body p-0 bg-white">
                 <div class="table-responsive slimScroll" data-height="320">
                     <table class="table table-hover table-striped">
                         <!-- Table heading -->
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td class="col-md-6">Nasi Goreng</td>
-                            <td class="col-md-2">
-                                <input type="number" name="" class="form-control qty nmpd-target" value="0" readonly="readonly" data-numpad="nmpd1">
-                            </td>
-                            <td class="col-md-2">10.000</td>
-                            <td class="col-md-2" align="right">10.000</td>
-                            <td><a href="#"><i class="icon-delete text-red"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="col-md-6">Nasi Goreng</td>
-                            <td class="col-md-2">
-                                <input type="number" name="" class="form-control qty nmpd-target" value="0" readonly="readonly" data-numpad="nmpd1">
-                            </td>
-                            <td class="col-md-2">10.000</td>
-                            <td class="col-md-2" align="right">10.000</td>
-                            <td><a href="#"><i class="icon-delete text-red"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="col-md-6">Nasi Goreng</td>
-                            <td class="col-md-2">
-                                <input type="number" name="" class="form-control qty nmpd-target" value="0" readonly="readonly" data-numpad="nmpd1">
-                            </td>
-                            <td class="col-md-2">10.000</td>
-                            <td class="col-md-2" align="right">10.000</td>
-                            <td><a href="#"><i class="icon-delete text-red"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="col-md-6">Nasi Goreng</td>
-                            <td class="col-md-2">
-                                <input type="number" name="" class="form-control qty nmpd-target" value="0" readonly="readonly" data-numpad="nmpd1">
-                            </td>
-                            <td class="col-md-2">10.000</td>
-                            <td class="col-md-2" align="right">10.000</td>
-                            <td><a href="#"><i class="icon-delete text-red"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="col-md-6">Nasi Goreng</td>
-                            <td class="col-md-2">
-                                <input type="number" name="" class="form-control qty nmpd-target" value="0" readonly="readonly" data-numpad="nmpd1">
-                            </td>
-                            <td class="col-md-2">10.000</td>
-                            <td class="col-md-2" align="right">10.000</td>
-                            <td><a href="#"><i class="icon-delete text-red"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td class="col-md-6">Nasi Goreng</td>
-                            <td class="col-md-2">
-                                <input type="number" name="" class="form-control qty nmpd-target" value="0" readonly="readonly" data-numpad="nmpd1">
-                            </td>
-                            <td class="col-md-2">10.000</td>
-                            <td class="col-md-2" align="right">10.000</td>
-                            <td><a href="#"><i class="icon-delete text-red"></i></a></td>
-                        </tr>
                         <tr>
                             <td>1</td>
                             <td class="col-md-6">Nasi Goreng</td>
@@ -334,11 +274,11 @@
                 <div class="container-fluid list mb-3">
                     <div class="row">
                         <div class="col-md-12 p-0">
-                        <a href="#" class="btn button-act btn-primary r-30 mr-1" data-toggle="popover" data-trigger="hover" data-content="Print" data-placement="top"><i class="fal fa-print"></i></a>
+                        <!-- <a href="#" class="btn button-act btn-primary r-30 mr-1" data-toggle="popover" data-trigger="hover" data-content="Print" data-placement="top"><i class="fal fa-print"></i></a> -->
 
-                        <a href="#" class="btn button-act btn-primary  r-30 mr-1" data-toggle="popover" data-trigger="hover" data-content="Discount" data-placement="top"><i class="fal fa-percent"></i></a>
+                        <a href="#" class="btn button-act btn-primary  r-30 mr-1 " data-toggle="modal" data-target="#ModalDiscount"><i class="fal fa-percent"></i></a>
 
-                        <a href="#" class="btn button-act btn-primary  r-30 mr-1" data-toggle="popover" data-trigger="hover" data-content="Send to Kitchen" data-placement="right"><i class="fal fa-utensils"></i></a>
+                        <!-- <a href="#" class="btn button-act btn-primary  r-30 mr-1" data-toggle="popover" data-trigger="hover" data-content="Send to Kitchen" data-placement="right"><i class="fal fa-utensils"></i></a> -->
 
                         <a href="#" class="btn button-act btn-danger  r-30 float-right" data-toggle="popover" data-trigger="hover" data-content="Cancel Order" data-placement="top"><i class="fal fa-times"></i></a>
 
@@ -348,7 +288,7 @@
                 </div>
                 <div class="container-fluid">
                     <div class="row">
-                    <a class="btn btn-success btn-block btn-pay" data-toggle="modal" data-target="#ModalBayar"><span style=" float:left; font-size: 20px; ">Pay</span> <span style="float: right; font-size: 20px; font-weight: bold;">Rp. 10.000</span></a>
+                    <a class="btn btn-success btn-block btn-pay" data-toggle="modal" data-target="#ModalTakeAway"><span style=" float:left; font-size: 20px; ">Pay</span> <span style="float: right; font-size: 20px; font-weight: bold;">Rp. 10.000</span></a>
                 </div>
             </div>
         </div>
@@ -357,7 +297,7 @@
 
 <!-- MODAL ORDER TYPE -->
 <div class="modal fade" id="ModalBayar">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
       <div class="modal-content">
       
         <div class="modal-header">
@@ -367,20 +307,7 @@
         
         <div class="modal-body">
             <div class="row">
-                <div class="col-6 text-center my-auto">
-                    <a href="#" data-toggle="modal" data-target="#ModalTakeAway">
-                        <div class="card card-block shadow1 d-flex order-type" style="height: 220px">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                <div>
-                                    <img src="<?php echo base_url(); ?>assets/img/png/take-away.png">
-                                    <p class="card-text mt-2 text-black"><strong>Take Away</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-6 text-center my-auto">
+                <div class="col-12 text-center my-auto">
                     <a href="#" data-toggle="modal" data-target="#ModalDine">
                         <div class="card card-block shadow1 d-flex order-type" style="height: 220px">
                             <div class="card-body align-items-center d-flex justify-content-center">
@@ -394,7 +321,11 @@
                 </div>
             </div>
         </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal">Skip</button>
+        </div>
     </div>
+</div>
 </div>
 <!-- END MODAL ORDER TYPE -->
 
@@ -619,3 +550,85 @@
     </div>
 </div>
 <!-- END MODAL DINE IN -->
+
+
+<!-- MODAL LIST HOLD ORDER -->
+<div class="modal fade" id="ModalHold">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <div class="modal-header">
+          <h5 class="modal-title">List Hold Order</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <div class="modal-body"> 
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th width="10">No.</th>
+                                <th>Table</th>
+                                <th>Name</th>
+                                <th>Orders</th>
+                                <th width="100"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>Meja 1</td>
+                                <td>Agus Setiawan</td>
+                                <td>5</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-primary"><span class="fal fa-eye"></span></a>
+                                    <a href="#" class="btn btn-sm btn-success"><span class="fal fa-edit"></span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1.</td>
+                                <td>Meja 2</td>
+                                <td>Firman</td>
+                                <td>2</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-primary"><span class="fal fa-eye"></span></a>
+                                    <a href="#" class="btn btn-sm btn-success"><span class="fal fa-edit"></span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- END MODAL LIST HOLD ORDER -->
+
+<!-- MODAL LIST HOLD ORDER -->
+<div class="modal fade" id="ModalDiscount">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+      
+        <div class="modal-header">
+          <h5 class="modal-title">Discount</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <div class="modal-body"> 
+            <div class="row">
+                <div class="col-sm-12">
+                    <label>Discount</label>
+                    <input type="number" name="" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><span class="icon-remove"></span> Close</button>
+            <button type="button" class="btn btn-sm btn-success" data-dismiss="modal"><span class="icon-save"></span> Save</button>
+        </div>
+    </div>
+</div>
+</div>
+<!-- END MODAL LIST HOLD ORDER -->
