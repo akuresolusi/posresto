@@ -224,7 +224,7 @@
             <div class="card-header white pr-2 pl-3">
                 <p style="display: inline;"><i class="icon-clipboard-edit blue-text"></i>
                 <strong> LIST ORDER </strong> </p>
-                <a href="#" class="btn button-act btn-primary r-30 float-right" data-toggle="modal" data-target="#ModalBayar"><i class="fal fa-plus"></i></a>
+                <a href="#" class="btn button-act btn-primary r-30 float-right" data-toggle="modal" data-target="#ModalDine"><i class="fal fa-plus"></i></a>
                 <a href="#" class="btn button-act btn-primary r-30 float-right mr-2" data-toggle="modal" data-target="#ModalHold"><i class="fal fa-list"></i></a>
             </div>
             <div class="card-body p-0 bg-white">
@@ -295,39 +295,6 @@
     </div>
 </div>
 
-<!-- MODAL ORDER TYPE -->
-<div class="modal fade" id="ModalBayar">
-    <div class="modal-dialog modal-dialog-centered modal-sm">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h5 class="modal-title">Please Select Order Type</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-12 text-center my-auto">
-                    <a href="#" data-toggle="modal" data-target="#ModalDine">
-                        <div class="card card-block shadow1 d-flex order-type" style="height: 220px">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                <div>
-                                    <img src="<?php echo base_url(); ?>assets/img/png/table.png">
-                                    <p class="card-text mt-2 text-black"><strong>Dine In</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" data-dismiss="modal">Skip</button>
-        </div>
-    </div>
-</div>
-</div>
-<!-- END MODAL ORDER TYPE -->
 
 <!-- MODAL TAKE AWAY -->
 <div class="modal fade" id="ModalTakeAway">
@@ -479,7 +446,7 @@
 
 <!-- MODAL DINE IN -->
 <div class="modal fade" id="ModalDine">
-    <div class="modal-dialog modal-xlg modal-dialog-centered">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Dine In</h5>
@@ -487,62 +454,39 @@
         </div>
         
         <div class="modal-body pt-1">
-            <div class="row p-2">
-                <div class="col-12">
-                    <h5 class="text-center mb-2">Select a Table</h5>
-                </div>
-                
-                <div class="col-2 text-center my-auto p-2">
-                    <a href="#">
-                        <div class="card card-block shadow1 d-flex order-type" style="height: 200px">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                <div>
-                                    <img src="<?php echo base_url(); ?>assets/img/png/table.png">
-                                    <p class="card-text mb-0 text-black"><strong>Table 1</strong></p>
-                                    <span class="badge badge-primary mt-0">In Use</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-2 text-center my-auto p-2">
-                    <a href="#">
-                        <div class="card card-block shadow1 d-flex order-type" style="height: 200px">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                <div>
-                                    <img src="<?php echo base_url(); ?>assets/img/png/table.png">
-                                    <p class="card-text mb-0 text-black"><strong>Table 2</strong></p>
-                                    <span class="badge badge-success">Available</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-2 text-center my-auto p-2">
-                    <a href="#">
-                        <div class="card card-block shadow1 d-flex order-type" style="height: 200px">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                <div>
-                                    <img src="<?php echo base_url(); ?>assets/img/png/table.png">
-                                    <p class="card-text mb-0 text-black"><strong>Table 2</strong></p>
-                                    <span class="badge badge-success">Available</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-2 text-center my-auto p-2">
-                    <a href="#">
-                        <div class="card card-block shadow1 d-flex order-type" style="height: 200px">
-                            <div class="card-body align-items-center d-flex justify-content-center">
-                                <div>
-                                    <img src="<?php echo base_url(); ?>assets/img/png/table.png">
-                                    <p class="card-text mb-0 text-black"><strong>Table 2</strong></p>
-                                    <span class="badge badge-success">Available</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th width="10">No.</th>
+                                <th>Table</th>
+                                <th>Status</th>
+                                <th>Time</th>
+                                <th width="50"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>Meja 1</td>
+                                <td><span class="badge badge-success">Available</span></td>
+                                <td>13.20</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>Meja 2</td>
+                                <td><span class="badge badge-primary">In Use</span></td>
+                                <td>12.00</td>
+                                <td>
+                                    <a href="#" class="btn-fab btn-fab-sm shadow btn-primary"><span class="fal fa-arrow-right"></span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
