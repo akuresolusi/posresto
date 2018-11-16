@@ -13,32 +13,31 @@
         <div class="card" style="border-right: 0; border-radius: 0;">
             <div class="card-body">
                 <div class="row pl-3 pr-3">
-                  <div class="col-10 p-0">
+                  <div class="col-9 p-0">
                     <div class="input-group focused">
-                        <input class="form-control custom-search" style="border-right: none;" placeholder="Search something..." type="text">
+                        <input class="form-control custom-search" id="myInput" style="border-right: none;" placeholder="Search something..." type="text" onkeyup="cari_items()">
                         <span class="input-group-btn">
-                            <button type="submit" class="btn btn-default btn-transparent"><i class="icon-search"></i></button>
+                            <button  class="btn btn-default btn-transparent"><i class="icon-search"></i></button>
                         </span>
                     </div>
                   </div>
-                  <div class="col-2 p-0 pl-2">
+                  <div class="col-3 p-0 pl-2">
                     <div class="dropdown">
                       <button class="btn btn-primary btn-block" type="button" id="categori" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-heart-o mr-2"></i>
-                        Categories
+                        <span>All categories</span>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="categori">
-                        <a class="dropdown-item" href="#">Seafood</a>
-                        <a class="dropdown-item" href="#">Soft Drink</a>
-                        <a class="dropdown-item" href="#">Noodle</a>
-                        <a class="dropdown-item" href="#">Seafood</a>
-                        <a class="dropdown-item" href="#">Soft Drink</a>
-                        <a class="dropdown-item" href="#">Noodle</a>
-                        <a class="dropdown-item" href="#">Seafood</a>
-                        <a class="dropdown-item" href="#">Soft Drink</a>
-                        <a class="dropdown-item" href="#">Noodle</a>
-                        <a class="dropdown-item" href="#">Seafood</a>
-                        <a class="dropdown-item" href="#">Soft Drink</a>
-                        <a class="dropdown-item" href="#">Noodle</a>
+                        <a class="dropdown-item pilih-kategori" value="" onclick="pilih_kategori('')" style="cursor: pointer;" >All categories</a>
+                        
+                        <?php
+                         foreach ($list_categori as $value){
+                            // $id = $this->encrypt->encode($value['id']);
+                            $id = $value['id'];
+                        ?>
+                            <a class="dropdown-item pilih-kategori" style="cursor: pointer;" onclick="pilih_kategori('<?php echo $id ?>')" ><?php echo $value['categori'] ?></a>
+                        <?php
+                         }
+                        ?>
                       </div>
                     </div>
                    <!--  <a href="#" class="btn btn-primary btn-block"><i class="icon-heart-o mr-2"></i>Categories</a> -->
@@ -48,169 +47,20 @@
 
                 <!-- MENU -->
                 <div class="row mt-2 mb-0 p-2 white">
-                    <div class="row p-3 pt-0 p-t-0 slimScroll" data-height="490">
-                        <div class="col-md-2 col-6 pr-2 pl-2">
+                    <div class="row p-3 pt-0 p-t-0 slimScroll" data-height="490" id="mydata">
+                        
+                        <!-- <div class="col-md-2 col-4 pr-2 pl-2 item" style="cursor: pointer;">
                             <div class="paper-block text-center mb-2 p-0">
                                 <div class="mb-2">
                                    <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
                                 </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span">20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
+                                <h6 class="mb-1">Nasi Goreng ayam</h6>
                                 <span>20.000</span>
                             </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-2">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-1">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-6 pr-2 pl-2">
-                            <div class="paper-block text-center mb-0 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div>
+                        </div> -->
+
+                        <!-- Insert Items -->
+
                     </div>
                 </div>
             </div>
@@ -233,7 +83,6 @@
                         <!-- Table heading -->
                         <tbody>
                         <tr>
-                            <td>1</td>
                             <td class="col-md-6">Nasi Goreng</td>
                             <td class="col-md-2">
                                 <input type="number" name="" class="form-control qty nmpd-target" value="0" readonly="readonly" data-numpad="nmpd1">
@@ -246,37 +95,10 @@
                     </table>
                 </div>
 
-                <div class="container-fluid list">
-                    <div class="row">
-                        <div class="col-md-12 p-0 mt-2">
-                            <span id="left-list">Subtotal</span>
-                            <span id="right-list">0</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid list">
-                    <div class="row">
-                        <div class="col-md-12 p-0">
-                            <span id="left-list">Tax</span>
-                            <span id="right-list">0</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid list mb-2">
-                    <div class="row">
-                        <div class="col-md-12 p-0">
-                            <span id="left-list">Discount</span>
-                            <span id="right-list">0%</span>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="container-fluid list mb-3">
                     <div class="row">
                         <div class="col-md-12 p-0">
                         <!-- <a href="#" class="btn button-act btn-primary r-30 mr-1" data-toggle="popover" data-trigger="hover" data-content="Print" data-placement="top"><i class="fal fa-print"></i></a> -->
-
-                        <a href="#" class="btn button-act btn-primary  r-30 mr-1 " data-toggle="modal" data-target="#ModalDiscount"><i class="fal fa-percent"></i></a>
 
                         <!-- <a href="#" class="btn button-act btn-primary  r-30 mr-1" data-toggle="popover" data-trigger="hover" data-content="Send to Kitchen" data-placement="right"><i class="fal fa-utensils"></i></a> -->
 
@@ -296,283 +118,12 @@
 </div>
 
 
-<!-- MODAL TAKE AWAY -->
-<div class="modal fade" id="ModalTakeAway">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h5 class="modal-title">Order Payment</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <div class="modal-body"> 
-            <div class="row">
-                <div class="col-7">
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr>
-                                <td><b>Type of Payment</b></td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>Cash</option>
-                                        <option>Credit Card</option>
-                                        <option>Transfer</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><b>Payment Amount</b></td>
-                                <td>
-                                    <div class="input-group focused">
-                                        <input class="form-control" placeholder="Cash Payment" value="0" type="text">
-                                        <span class="input-group-btn">
-                                            <button type="submit" class="btn btn-success btn-add-payment">Add</i></button>
-                                        </span>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    <div class="col-12 p-0 mt-3">
-                        <a href="#" class="btn btn-block btn-success">Full Payment</a>
-                    </div>
-                    <div class="row p-2 pt-0">
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">7</a> 
-                        </div>
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">8</a> 
-                        </div> 
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">9</a> 
-                        </div> 
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-success">10K</a> 
-                        </div> 
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">4</a> 
-                        </div> 
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">5</a> 
-                        </div> 
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">6</a> 
-                        </div> 
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-success">20K</a> 
-                        </div> 
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">1</a> 
-                        </div> 
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">2</a> 
-                        </div>
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">3</a> 
-                        </div>
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-success">50K</a> 
-                        </div>
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">C</a> 
-                        </div>
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">0</a> 
-                        </div>
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-primary">←</a> 
-                        </div>
-                        <div class="col-3 p-1">
-                            <a href="#" class="btn btn-block btn-success">100K</a> 
-                        </div>
-                    </div>
-                </div>
 
 
-                <div class="col-5">
-                    <h5 class="text-center mb-2">Cart Details</h5>
-                    <table class="table table-bordered">
-                        <tbody>
-                            <tr>
-                                <td width="150"><b>Sub Total</b></td>
-                                <td align="right">Rp. 10.000</td>
-                            </tr>
-                            <tr>
-                                <td><b>Discount</b></td>
-                                <td align="right">0%</td>
-                            </tr>
-                            <tr>
-                                <td><b>Fax</b></td>
-                                <td align="right">Rp. 2.000</td>
-                            </tr>
-                            <tr>
-                                <td><b>Net Payable</b></td>
-                                <td align="right">Rp. 12.000</td>
-                            </tr>
-                            <tr>
-                                <td><b>Paid</b></td>
-                                <td align="right">Rp. 15.000</td>
-                            </tr>
-                            <tr>
-                                <td style="font-size: 20px;"><b>Balance</b></td>
-                                <td align="right" style="font-size: 20px;">Rp. 3.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <h5 class="text-center mb-2">Payment List</h5>
-                    <div class="input-group focused">
-                        <input class="form-control" placeholder="Cash Payment" value="0" type="text">
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-primary r-0"><i class="icon-edit"></i></button>
-                        </span>
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-danger r-0"><i class="icon-times"></i></button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><span class="icon-remove"></span> Close</button>
-            <button type="button" class="btn btn-sm btn-success" data-dismiss="modal"><span class="icon-shopping-bag"></span> Checkout</button>
-        </div>
-    </div>
-</div>
-</div>
-<!-- END MODAL TAKE AWAY -->
+<?php $this->load->view('pos/modal_bayar'); ?>
+<?php $this->load->view('pos/modal_pilih_meja'); ?>
+<?php $this->load->view('pos/modal_list_order'); ?>
 
 
-<!-- MODAL DINE IN -->
-<div class="modal fade" id="ModalDine">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Dine In</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <div class="modal-body pt-1">
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th width="10">No.</th>
-                                <th>Table</th>
-                                <th>Status</th>
-                                <th>Time</th>
-                                <th width="50"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td>Meja 1</td>
-                                <td><span class="badge badge-success">Available</span></td>
-                                <td>13.20</td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>Meja 2</td>
-                                <td><span class="badge badge-primary">In Use</span></td>
-                                <td>12.00</td>
-                                <td>
-                                    <a href="#" class="btn-fab btn-fab-sm shadow btn-primary"><span class="fal fa-arrow-right"></span></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
-<!-- END MODAL DINE IN -->
 
 
-<!-- MODAL LIST HOLD ORDER -->
-<div class="modal fade" id="ModalHold">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h5 class="modal-title">List Hold Order</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <div class="modal-body"> 
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th width="10">No.</th>
-                                <th>Table</th>
-                                <th>Name</th>
-                                <th>Orders</th>
-                                <th width="100"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td>Meja 1</td>
-                                <td>Agus Setiawan</td>
-                                <td>5</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-primary"><span class="fal fa-eye"></span></a>
-                                    <a href="#" class="btn btn-sm btn-success"><span class="fal fa-edit"></span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1.</td>
-                                <td>Meja 2</td>
-                                <td>Firman</td>
-                                <td>2</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-primary"><span class="fal fa-eye"></span></a>
-                                    <a href="#" class="btn btn-sm btn-success"><span class="fal fa-edit"></span></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!-- END MODAL LIST HOLD ORDER -->
-
-<!-- MODAL LIST HOLD ORDER -->
-<div class="modal fade" id="ModalDiscount">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-      
-        <div class="modal-header">
-          <h5 class="modal-title">Discount</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <div class="modal-body"> 
-            <div class="row">
-                <div class="col-sm-12">
-                    <label>Discount</label>
-                    <input type="number" name="" class="form-control">
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><span class="icon-remove"></span> Close</button>
-            <button type="button" class="btn btn-sm btn-success" data-dismiss="modal"><span class="icon-save"></span> Save</button>
-        </div>
-    </div>
-</div>
-</div>
-<!-- END MODAL LIST HOLD ORDER -->

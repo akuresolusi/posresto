@@ -102,6 +102,10 @@
                     <i></i>
                 </a>
             </div>
+
+
+            <h4><?php echo $this->session->userdata()['outlet']; ?></h4>
+            
             <!--Top Menu Start -->
 <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
@@ -150,6 +154,7 @@
 </div>
 <!--/#app -->
 <script src="<?php echo base_url(); ?>assets/js/app.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/pos.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/numpad/jquery.numpad.js"></script>
 <script>
     $(document).ready(function(){
@@ -179,8 +184,50 @@
             });
             $('#numpad4div').numpad();
             $('#numpad4column .qtyInput').numpad();
+            
+       // alert($(window).width());
         });
     });
 </script>
+
+
+<!-- Script Proses POS -->
+<script type="text/javascript">
+    
+    function cari_items() {
+        var input, filter, data, item, h6, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        data = document.getElementById("mydata");
+        item = data.getElementsByClassName("item");
+        for (i = 0; i < item.length; i++) {
+            h6 = item[i].getElementsByTagName("h6")[0];
+            if (h6.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                item[i].style.display = "";
+            }else{
+                item[i].style.display = "none";
+            }
+        }
+    }
+
+    function pilih_kategori(id){
+        $("#mydata").html("");
+        var data = <?php echo $data ?>;
+        $.each( data, function( key, value ) {
+            var element = "<div class='col-md-2 col-6 pr-2 pl-2 item' style='cursor: pointer;''><div class='paper-block text-center mb-2 p-0'><div class='mb-2'><img class='img-200' src='<?php echo base_url(); ?>assets/gambar/"+ value['idoutlet'] +"/small/"+ value['image'] +"' alt=''></div><h6 class='mb-1'>"+ value['name'] +"</h6><span>"+ value['price'] +"</span></div></div>";
+            if(id == null || id == ""){
+                $("#mydata").append(element);
+            }else{
+                if(id == value['idcategori']){
+                    $("#mydata").append(element);
+                }
+            }
+        });
+    }
+    pilih_kategori();
+
+</script>
+
+
 </body>
 </html>

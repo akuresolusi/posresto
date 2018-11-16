@@ -100,7 +100,7 @@
                         <div class="form-line">
                             <label>Image</label>
                             <input type="file" class="form-control" accept="image/png, image/jpeg" name="gambar" onchange="readURL(this);">
-                            <img id="blah" src="#" class="img-responsive align-center mt-3" style="max-height: 200px; " />
+                            <img id="blah" src="#" class="img-responsive align-center mt-3" style="max-height: 216px; max-width: 280px;" />
                         </div>
                     </div>
                    <div class="form-group col-md-12">
