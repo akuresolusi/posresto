@@ -9,7 +9,6 @@
 </style>
 <div class="row">
     <div class="col-md-8 p-0">
-       
         <div class="card" style="border-right: 0; border-radius: 0;">
             <div class="card-body">
                 <div class="row pl-3 pr-3">
@@ -45,23 +44,11 @@
                 </div>
                 <!-- END SEARCH -->
 
-                <!-- MENU -->
-                <div class="row mt-2 mb-0 p-2 white">
-                    <div class="row p-3 pt-0 p-t-0 slimScroll" data-height="490" id="mydata">
-                        
-                        <!-- <div class="col-md-2 col-4 pr-2 pl-2 item" style="cursor: pointer;">
-                            <div class="paper-block text-center mb-2 p-0">
-                                <div class="mb-2">
-                                   <img class="img-200" src="<?php echo base_url(); ?>assets/img/food/5.jpg" alt="">
-                                </div>
-                                <h6 class="mb-1">Nasi Goreng ayam</h6>
-                                <span>20.000</span>
-                            </div>
-                        </div> -->
+                <!-- MENU --> 
+                <div class="row mt-2 mb-0 p-2 white slimScroll" data-height="505" id="mydata">
 
-                        <!-- Insert Items -->
+                    <!-- INSERT ITEM -->
 
-                    </div>
                 </div>
             </div>
         </div>
@@ -95,6 +82,31 @@
                     </table>
                 </div>
 
+                <div class="container-fluid list">
+                    <div class="row">
+                        <div class="col-md-12 p-0">
+                            <span id="left-list">Subtotal</span>
+                            <span id="right-list">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid list">
+                    <div class="row">
+                        <div class="col-md-12 p-0">
+                            <span id="left-list">Tax</span>
+                            <span id="right-list">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid list mb-2">
+                    <div class="row">
+                        <div class="col-md-12 p-0">
+                            <span id="left-list">Discount</span>
+                            <span id="right-list">0%</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="container-fluid list mb-3">
                     <div class="row">
                         <div class="col-md-12 p-0">
@@ -104,7 +116,7 @@
 
                         <a href="#" class="btn button-act btn-danger  r-30 float-right" data-toggle="popover" data-trigger="hover" data-content="Cancel Order" data-placement="top"><i class="fal fa-times"></i></a>
 
-                        <a href="#" class="btn button-act btn-warning  r-30 float-right mr-2" data-toggle="popover" data-trigger="hover" data-content="Hold Order" data-placement="left"><i class="fal fa-clock"></i></a>
+                        <a href="#" class="btn button-act btn-warning  r-30 mr-2" data-toggle="popover" data-trigger="hover" data-content="Hold Order" data-placement="left"><i class="fal fa-clock"></i></a>
                         </div>
                     </div>
                 </div>
@@ -115,6 +127,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 

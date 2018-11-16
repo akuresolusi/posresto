@@ -118,7 +118,7 @@
             <!--Top Menu Start -->
 <div class="navbar-custom-menu p-t-5" style="font-size: 23px;">
     <ul class="nav navbar-nav">
-        <li data-toggle="control-sidebar" style="cursor: pointer;">
+        <li style="cursor: pointer;">
             <span id="name-outlet"><?php echo $this->session->userdata()['outlet']; ?></span>
         </li>
         <li>

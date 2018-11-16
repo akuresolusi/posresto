@@ -103,12 +103,13 @@
                 </a>
             </div>
 
-
-            <h4><?php echo $this->session->userdata()['outlet']; ?></h4>
             
             <!--Top Menu Start -->
 <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
+        <li data-toggle="control-sidebar" style="cursor: pointer; padding: 10px;">
+            <span id="name-outlet"><?php echo $this->session->userdata()['outlet']; ?></span>
+        </li>
         <!-- User Account-->
         <li class="dropdown custom-dropdown notifications-menu">
             <a href="#" class=" nav-link" data-toggle="dropdown" aria-expanded="false">
@@ -214,7 +215,7 @@
         $("#mydata").html("");
         var data = <?php echo $data ?>;
         $.each( data, function( key, value ) {
-            var element = "<div class='col-md-2 col-6 pr-2 pl-2 item' style='cursor: pointer;''><div class='paper-block text-center mb-2 p-0'><div class='mb-2'><img class='img-200' src='<?php echo base_url(); ?>assets/gambar/"+ value['idoutlet'] +"/small/"+ value['image'] +"' alt=''></div><h6 class='mb-1'>"+ value['name'] +"</h6><span>"+ value['price'] +"</span></div></div>";
+            var element = "<div class='col-md-2 col-6 pr-2 pl-2 '><div class='item-all text-center p-0' style='cursor: pointer;'><div class='mb-2'><img class='img-fluid' src='<?php echo base_url(); ?>assets/gambar/"+ value['idoutlet'] +"/small/"+ value['image'] +"'></div><h6 class='mb-1'>"+ value['name'] +"</h6><span>Rp "+ value['price'] +"</span></div></div>";
             if(id == null || id == ""){
                 $("#mydata").append(element);
             }else{
